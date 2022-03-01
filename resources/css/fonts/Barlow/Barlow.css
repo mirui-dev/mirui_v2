@@ -1,0 +1,119 @@
+/* Barlow 
+    https://fonts.google.com/specimen/Barlow?preview.text=COPYRIGHT+%C2%A9+2020,+MIRU!+MEDIA+CORPORATION.+(ASIA)&preview.text_type=custom&preview.size=13 */
+
+@font-face{
+    font-family: Barlow-Black;
+    src: url(./Barlow-Black.ttf);
+    font-weight: 900;
+}
+
+@font-face{
+    font-family: Barlow-BlackItalic;
+    src: url(./Barlow-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Barlow-Bold;
+    src: url(./Barlow-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: Barlow-BoldItalic;
+    src: url(./Barlow-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Barlow-ExtraBold;
+    src: url(./Barlow-ExtraBold.ttf);
+    font-weight: 800;
+}
+
+@font-face{
+    font-family: Barlow-ExtraBoldItalic;
+    src: url(./Barlow-ExtraBoldItalic.ttf);
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Barlow-ExtraLight;
+    src: url(./Barlow-ExtraLight.ttf);
+    font-weight: 200;
+}
+
+@font-face{
+    font-family: Barlow-ExtraLightItalic;
+    src: url(./Barlow-ExtraLightItalic.ttf);
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Barlow-Italic;
+    src: url(./Barlow-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Barlow-Light;
+    src: url(./Barlow-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face{
+    font-family: Barlow-LightItalic;
+    src: url(./Barlow-LightItalic.ttf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Barlow-Medium;
+    src: url(./Barlow-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face{
+    font-family: Barlow-MediumItalic;
+    src: url(./Barlow-MediumItalic.ttf);
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Barlow-Regular;
+    src: url(./Barlow-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: Barlow-SemiBold;
+    src: url(./Barlow-SemiBold.ttf);
+    font-weight: 600;
+}
+
+@font-face{
+    font-family: Barlow-SemiBoldItalic;
+    src: url(./Barlow-SemiBoldItalic.ttf);
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Barlow-Thin;
+    src: url(./Barlow-Thin.ttf);
+    font-weight: 100;
+}
+
+@font-face{
+    font-family: Barlow-ThinItalic;
+    src: url(./Barlow-ThinItalic.ttf);
+    font-weight: 100;
+    font-style: italic;
+}

@@ -8,39 +8,54 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="{{ mix('css/font.css') }}">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/mirui.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/mirui-dashboard.css') }}">
 
         @livewireStyles
 
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <!-- <script src="{{ mix('js/mirui.js') }}" defer></script> -->
+
+        <!-- <script src="./../src/js/base.js"></script>
+        <script src="./../src/js/nav.js"></script>
+        <script src="./../src/js/components/noti.js"></script>
+        <script src="./../src/js/components/asset.js"></script>
+        <script src="./../src/js/components/article.js"></script>
+        <script src="./../src/js/components/cart.js"></script>
+        <script src="./../src/js/components/library.js"></script>
+        <script src="./../src/js/components/transaction.js"></script>
+        <script src="./../src/js/components/user.js"></script>
+        <script src="./../src/js/page-dashboard.js"></script>
+        <script src="./../src/js/page-dashboard-article.js"></script>
+        <script src="./../src/js/page-dashboard-cart.js"></script>
+        <script src="./../src/js/page-dashboard-library.js"></script>
+        <script src="./../src/js/page-dashboard-risk.js"></script>
+        <script src="./../src/js/page-dashboard-transaction.js"></script>
+        <script src="./../src/js/page-dashboard-user.js"></script> -->
+
+        <script>
+            var root = './../';
+        </script>
+
     </head>
-    <body class="font-sans antialiased">
-        <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+    <body onload="userServer(true);cartServer();libraryServer();//greetInject();">
+        <div id="global-noti-parent" class="flex fill-width">
         </div>
+        
+        {{ $slot }}
 
-        @stack('modals')
+        <footer class="font-pri flex fill-width">
+            <div>
+                COPYRIGHT © 2020-2022, MIRUI MEDIA CORPORATION. (ASIA)
+            </div>
+        </footer>
 
         @livewireScripts
+
     </body>
+
 </html>

@@ -5611,16 +5611,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
+/***/ "./resources/vendor/js/app.js":
+/*!************************************!*\
+  !*** ./resources/vendor/js/app.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/vendor/js/bootstrap.js");
 
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
@@ -5628,10 +5628,10 @@ alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 
 /***/ }),
 
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
+/***/ "./resources/vendor/js/bootstrap.js":
+/*!******************************************!*\
+  !*** ./resources/vendor/js/bootstrap.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
@@ -22871,10 +22871,101 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
+/***/ "./resources/css/views/mirui-contactus.css":
+/*!*************************************************!*\
+  !*** ./resources/css/views/mirui-contactus.css ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/views/mirui-dashboard.css":
+/*!*************************************************!*\
+  !*** ./resources/css/views/mirui-dashboard.css ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/views/mirui-watch.css":
+/*!*********************************************!*\
+  !*** ./resources/css/views/mirui-watch.css ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/vendor/css/app.css":
+/*!**************************************!*\
+  !*** ./resources/vendor/css/app.css ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/fonts/font.css":
+/*!**************************************!*\
+  !*** ./resources/css/fonts/font.css ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/mirui.css":
+/*!*********************************!*\
+  !*** ./resources/css/mirui.css ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/views/mirui-aboutus.css":
+/*!***********************************************!*\
+  !*** ./resources/css/views/mirui-aboutus.css ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/views/mirui-auth.css":
+/*!********************************************!*\
+  !*** ./resources/css/views/mirui-auth.css ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23200,8 +23291,15 @@ process.umask = function() { return 0; };
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/app": 0,
-/******/ 			"css/app": 0
+/******/ 			"/vendor/js/app": 0,
+/******/ 			"css/mirui": 0,
+/******/ 			"css/font": 0,
+/******/ 			"css/mirui-auth": 0,
+/******/ 			"css/mirui-aboutus": 0,
+/******/ 			"vendor/css/app": 0,
+/******/ 			"css/mirui-watch": 0,
+/******/ 			"css/mirui-dashboard": 0,
+/******/ 			"css/mirui-contactus": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -23251,8 +23349,15 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mirui","css/font","css/mirui-auth","css/mirui-aboutus","vendor/css/app","css/mirui-watch","css/mirui-dashboard","css/mirui-contactus"], () => (__webpack_require__("./resources/vendor/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/mirui","css/font","css/mirui-auth","css/mirui-aboutus","vendor/css/app","css/mirui-watch","css/mirui-dashboard","css/mirui-contactus"], () => (__webpack_require__("./resources/vendor/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mirui","css/font","css/mirui-auth","css/mirui-aboutus","vendor/css/app","css/mirui-watch","css/mirui-dashboard","css/mirui-contactus"], () => (__webpack_require__("./resources/css/fonts/font.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mirui","css/font","css/mirui-auth","css/mirui-aboutus","vendor/css/app","css/mirui-watch","css/mirui-dashboard","css/mirui-contactus"], () => (__webpack_require__("./resources/css/mirui.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mirui","css/font","css/mirui-auth","css/mirui-aboutus","vendor/css/app","css/mirui-watch","css/mirui-dashboard","css/mirui-contactus"], () => (__webpack_require__("./resources/css/views/mirui-aboutus.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mirui","css/font","css/mirui-auth","css/mirui-aboutus","vendor/css/app","css/mirui-watch","css/mirui-dashboard","css/mirui-contactus"], () => (__webpack_require__("./resources/css/views/mirui-auth.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mirui","css/font","css/mirui-auth","css/mirui-aboutus","vendor/css/app","css/mirui-watch","css/mirui-dashboard","css/mirui-contactus"], () => (__webpack_require__("./resources/css/views/mirui-contactus.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mirui","css/font","css/mirui-auth","css/mirui-aboutus","vendor/css/app","css/mirui-watch","css/mirui-dashboard","css/mirui-contactus"], () => (__webpack_require__("./resources/css/views/mirui-dashboard.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/mirui","css/font","css/mirui-auth","css/mirui-aboutus","vendor/css/app","css/mirui-watch","css/mirui-dashboard","css/mirui-contactus"], () => (__webpack_require__("./resources/css/views/mirui-watch.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

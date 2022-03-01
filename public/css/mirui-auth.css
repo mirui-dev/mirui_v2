@@ -1,0 +1,47 @@
+/* css.page-auth */
+
+/* nav::after{
+    filter: brightness(.4);
+} */
+
+nav #global-nav{
+    opacity: 1;
+}
+
+nav .auth--parent{
+    padding: 0 7rem;
+    flex-direction: column;
+}
+
+.auth--parent input{
+    border: 1px solid #ffffff00;
+}
+
+.auth--parent input:invalid{
+    /* border: 1px solid darkred; */
+    color: lightsalmon;
+    /* background: #441502b5; */
+}
+
+.auth--parent input.auth-invalid{
+    border: 1px solid darkorange;
+    color: orange;
+}
+
+div .auth--low{
+    padding: 1rem;
+}
+
+/* .auth--low button{
+    margin: .4rem;
+}
+
+.auth--low button:hover{
+    margin-left: .4rem;
+} */
+
+:root{
+    --global-article-background: url(/images/hero-fallback.jpg?83c0541680e852b076c34339a929d969);
+    --global-article-background-position: center;
+}
+

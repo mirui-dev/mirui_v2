@@ -1,0 +1,52 @@
+/* css.components.section */
+
+/* import child css.component.article */
+/* @import url(./article.css); */
+
+section{
+    top: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+section .global-section-nav{
+    position: absolute;
+    width: 5%;
+    /* margin: 0 1rem; */
+    padding: 0 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: Barlow-Light;
+}
+
+section .global-section-nav:hover{
+    color: rgb(255,255,255,.9);
+}
+
+section #global-section-nav-back{
+    left: 0;
+}
+
+section #global-section-nav-back:hover{
+    padding-left: 0.6rem;
+    padding-right: 1.4rem;
+}
+
+section #global-section-nav-back:active{
+    padding-left: 0.3rem;
+    padding-right: 1.7rem;
+}
+
+section #global-section-nav-next{
+    right: 0;
+}
+
+section #global-section-nav-next:hover{
+    padding-right: 0.6rem;
+    padding-left: 1.4rem;
+}
+
+section #global-section-nav-next:active{
+    padding-right: 0.3rem;
+    padding-left: 1.7rem;
+}

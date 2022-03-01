@@ -11,11 +11,24 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
+//  mix.setPublicPath('public/src');
+
+mix.js('resources/vendor/js/app.js', 'vendor/js')
+    .postCss('resources/vendor/css/app.css', 'vendor/css', [
         require('postcss-import'),
         require('tailwindcss'),
     ]);
+
+mix.postCss('resources/css/fonts/font.css', 'css');
+mix.postCss('resources/css/mirui.css', 'css');
+mix.postCss('resources/css/views/mirui-aboutus.css', 'css');
+mix.postCss('resources/css/views/mirui-auth.css', 'css');
+mix.postCss('resources/css/views/mirui-contactus.css', 'css');
+mix.postCss('resources/css/views/mirui-dashboard.css', 'css');
+mix.postCss('resources/css/views/mirui-watch.css', 'css');
+
+mix.js('resources/js/mirui.js', 'js');
+
 
 if (mix.inProduction()) {
     mix.version();
