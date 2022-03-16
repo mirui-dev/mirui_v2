@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\Index;
 use App\Http\Livewire\Dashboard;
 
 /*
@@ -14,10 +14,7 @@ use App\Http\Livewire\Dashboard;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Index::Class)->name('mirui.index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', Dashboard::class)->name('mirui.dashboard');
 
