@@ -6,7 +6,7 @@
             <input id="browse-search-input" class="fill-width" type="text" placeholder="search me uwu" oninput="articleSearch();">
         </div>
         <div id="browse-action" class="flex content-width">
-            <div id="browse-action-checkout" class="flex disabled" onclick="contentControl('transaction', true);">
+            <div id="browse-action-checkout" class="{{$checkoutBtn}}" wire:click="checkoutHandler()">
                 <span class="lnr lnr-enter"></span>
                 <span>CHECKOUT</span>
             </div>
@@ -104,5 +104,22 @@
         }
 
     </style>
+    <div id="browse-gallery" class="flex content-height">   
+        @if(count($cart??[]))
+        @foreach($cart as $movie)
+        <div id="browse-gallery-node-{{$movie->id}}" class="browse-gallery-node flex">
+            <span class="browse-gallery-node-score content-width">{{$movie->score}}</span>
+            <div class="browse-gallery-node-details flex max-height fill-width">
+                <h1 class="browse-gallery-node-details-title">{{$movie->title}}</h1>
+            </div>
+        </div>
+        <div>
+            <button wire:click="removeFromCart({{$movie}})">Remove</button>
+        </div>
+        @endforeach
+        @else
+        <div>Cart is empty now</div>
+        @endif
 
+    </div>
 </div>

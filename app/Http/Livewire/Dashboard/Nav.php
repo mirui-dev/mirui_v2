@@ -14,14 +14,24 @@ class Nav extends Component
     public $cartClass = '';
     public $profileClass = '';
     private $activeStateClass = ' active ';
+    public $cartItem = 0;
+    public $cartCountSwitch = false;
 
     protected $listeners = [
         // 'Nav.navHandler' => 'navHandler', 
         'dashboard.nav.itemStateHandler' => 'itemStateHandler',
+        'dashboard.nav.cartCount' => 'cartCount',
     ];
 
     public function render()
-    {
+    {   
+        // if(!$this->cartCountSwitch){
+        //     $this->emit('cart.refresh');
+        //     $this->cartCountSwitch= true;
+        // }
+        // else{
+        //     $this->cartCountSwitch=false;
+        // }
         return view('livewire.dashboard.nav');
     }
 
@@ -83,5 +93,9 @@ class Nav extends Component
         if($content != 'profile'){
             $this->profileClass = str_replace($this->activeStateClass, '', $this->profileClass);
         }
+    }
+
+    public function cartCount($count=0){
+        $this->cartItem = $count;
     }
 }

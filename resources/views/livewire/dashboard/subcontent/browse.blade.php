@@ -78,11 +78,15 @@
                 </div>
             </div>
         </div>
-        <div id="browse-sub-section-main">
+        <div>
             <div id="browse-sub-section-main-details" class="browse-sub-section-box">
                 <div>STORYLINE</div>
                 <p id="browse-sub-section-main-details-desc2">{{ $movie->description2 ?? '--' }}</p>
             </div>
+        </div>
+        <div>
+            <button wire:click="addToCart({{$movie}})">Add To Cart</button>
+            {{$addToCartMsg}}
         </div>
     </div>
 
