@@ -17,6 +17,10 @@ class InternalServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // bind key so that it returns the Facade class
+        App::singleton('cart', function(){
+            return new Cart;
+        });
     }
 
     /**
