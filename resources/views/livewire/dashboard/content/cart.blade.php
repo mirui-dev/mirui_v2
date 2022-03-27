@@ -6,14 +6,22 @@
             <input id="browse-search-input" class="fill-width" type="text" placeholder="search me uwu" oninput="articleSearch();">
         </div>
         <div id="browse-action" class="flex content-width">
-            <div id="browse-action-checkout" class="flex disabled" onclick="contentControl('transaction', true);">
+            @if($isCheckoutApplicable)
+            <div id="browse-action-checkout" class="flex" wire:click="handler()">
                 <span class="lnr lnr-enter"></span>
                 <span>CHECKOUT</span>
             </div>
+            @else
+            <div id="browse-action-checkout" class="flex disabled">
+                <span class="lnr lnr-enter"></span>
+                <span>CHECKOUT</span>
+            </div>
+            @endif
         </div>
     </div>
-    <div id="browse-gallery" class="flex content-height">
-    </div>
+    <!-- <div id="browse-gallery" class="flex content-height"> -->
+        @livewire('dashboard.content.browse.node', ['nodeMode' => 'cart'])
+    <!-- </div> -->
 
     <style>
         :root{

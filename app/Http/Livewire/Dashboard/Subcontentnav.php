@@ -98,9 +98,12 @@ class Subcontentnav extends Component
         if($type == 'cart'){
             if(!$this->isInCart){
                 // add to cart
+                $this->emit('dashboard.subcontent.browseManage.addToCart');
             }else{
                 // remove from cart
+                $this->emit('dashboard.subcontent.browseManage.removeFromCart');
             }
+            // must manage the cart state from here because emit is not in sequence, hence user might add same movie more than once in their cart
             $this->isInCart = !$this->isInCart;
         }
         // self::navStateHandler();

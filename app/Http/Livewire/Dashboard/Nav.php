@@ -18,6 +18,7 @@ class Nav extends Component
     protected $listeners = [
         // 'Nav.navHandler' => 'navHandler', 
         'dashboard.nav.itemStateHandler' => 'itemStateHandler',
+        'dashboard.nav.refresh' => '$refresh',
     ];
 
     public function render()

@@ -6,7 +6,7 @@
         </div>
     </div>
     <!-- <div id="browse-gallery" class="flex content-height"> -->
-        @livewire('dashboard.content.browse.node', ['isLibrary' => true])
+        @livewire('dashboard.content.browse.node', ['nodeMode' => 'library'])
     <!-- </div> -->
 
     <style>
