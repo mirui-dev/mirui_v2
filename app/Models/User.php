@@ -10,7 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
-use App\Models\Movie;
+// use App\Models\Movie;  // within same namespace
 
 class User extends Authenticatable
 {
@@ -65,6 +65,12 @@ class User extends Authenticatable
     public function movies(){
         // many-to-many relationship: https://laravel.com/docs/9.x/eloquent-relationships#many-to-many-model-structure
         return $this->belongsToMany(Movie::class);
+    }
+
+    // one-to-many: user()->cart
+    public function cart(){
+        // refer to customizing the name of the intermediate table on above link
+        return $this->belongsToMany(Movie::class, 'cart_user', 'user_id', 'movie_id');
     }
 
 }
