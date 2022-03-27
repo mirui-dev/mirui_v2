@@ -52,7 +52,8 @@ a button{
     transition: cubic-bezier(.18,.89,.32,1.28) 0.4s;
 }
 
-input{
+input, 
+textarea{
     color: inherit;
     -webkit-appearance: none;
     border: none;
@@ -62,7 +63,8 @@ input{
     margin: .5rem;
 }
 
-input:focus{
+input:focus, 
+textarea:focus{
     color: inherit;
     -webkit-appearance: none;
     border: none;
@@ -149,6 +151,16 @@ input:focus{
 .fill-height{
     height: -webkit-fill-available;
     height: -moz-available;
+}
+
+.fill-max-width{
+    max-width: -webkit-fill-available;
+    max-width: -moz-available;
+}
+
+.fill-max-height{
+    max-height: -webkit-fill-available;
+    max-height: -moz-available;
 }
 
 .content-width{

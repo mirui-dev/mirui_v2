@@ -11,4 +11,10 @@ class Dashboard extends Component
         return view('livewire.dashboard');
     }
 
+    public function mount(){
+        // for debugging purposes, override debugbar. default enable on APP_DEBUG = TRUE. 
+        // https://github.com/barryvdh/laravel-debugbar
+        // \Debugbar::disable();
+    }
+
 }

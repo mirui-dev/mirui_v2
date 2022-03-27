@@ -44,8 +44,8 @@ class Content extends Component
             }
         }
 
-        // dump($this->currentContent);
         $this->currentContent = $content;
+        // dump($this->currentContent);
 
         if($this->isContentVisible){
             self::itemStateHandler(true);

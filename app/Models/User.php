@@ -10,6 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Movie;
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -58,4 +60,11 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // one-to-many: user()->movies
+    public function movies(){
+        // many-to-many relationship: https://laravel.com/docs/9.x/eloquent-relationships#many-to-many-model-structure
+        return $this->belongsToMany(Movie::class);
+    }
+
 }

@@ -22,6 +22,7 @@ class Subcontent extends Component
         if($this->view){
             $view = $this->view;
             $viewData = $this->viewData;
+            // dump('wow');
             // $this->view = NULL;
             // $this->viewData = NULL;
             // return Subcontent::render();
@@ -36,7 +37,10 @@ class Subcontent extends Component
         $this->viewData = $data;
         // $this->urlParam = $urlParam;
 
+        // dump('wow');
+
         $this->emit('dashboard.subcontentnav.itemStateHandler', $subcontent);
+        // $this->emit('dashboard.subcontentnav.navStateHandler', ['back']);
         self::itemStatehandler($subcontent);
 
         // self::viewStatehandler(true);

@@ -21,16 +21,17 @@
                 </div>
             </div> -->
         </div>
-        <div id="browse-sub-cover-details" class="content-height">
+        <div id="browse-sub-cover-details" class="content-height fill-max-width">
             <div id="browse-sub-cover-details-top" class="flex">
-                <span id="browse-sub-cover-details-rating" class="content-width">P13</span>
-                <span id="browse-sub-cover-details-score" class="content-width">10.0</span>
+                <input id="browse-sub-cover-details-rating" class="content-width" type="text" wire:model.debounce.700ms="movie.rating" placeholder="Rating (ie. P13, R18)">
+                <input id="browse-sub-cover-details-score" class="content-width" type="number" wire:model.debounce.700ms="movie.score" placeholder="Review Score (0.0 - 10.0)" min="0.0" max="10.0" step="0.1">
             </div>
             <div id="browse-sub-cover-details-main">
-                <h1 id="browse-sub-cover-details-title">Movie Title</h1>
-                <h2 id="browse-sub-cover-details-title2">Secondary Movie Title</h2>
+                <input id="browse-sub-cover-details-title" class="fill-max-width" type="text" wire:model.debounce.700ms="movie.title" placeholder="Movie Title">
+                <br />
+                <input id="browse-sub-cover-details-title2" class="fill-max-width" type="text" wire:model.debounce.700ms="movie.title2" placeholder="Secondary Movie Title">
             </div>
-            <div id="browse-sub-cover-details-desc" class="font-pri">This is a short movie description. Click on any of the visible elements to edit the movie details. </div>
+            <input id="browse-sub-cover-details-desc" class="font-pri fill-width" type="text" wire:model.debounce.700ms="movie.description" placeholder="This is a short movie description. Click on any of the visible elements to edit the movie details. ">
         </div>
     </div>
     <div id="browse-sub-section" class="flex fill-width">
@@ -39,49 +40,49 @@
                 <div id="browse-sub-section-sidebar-details-info" class="flex content-width browse-sub-section-box">
                     <div class="browse-sub-section-sidebar-details-info-child" style="margin-right: 0;">
                         <div>DATE</div>
-                        <input type="date" id="browse-sub-section-sidebar-details-year" class="fill-width">
+                        <input id="browse-sub-section-sidebar-details-year" class="fill-width" type="date" wire:model.debounce.700ms="movie.dateRelease" value="{{ $movie->title ?? '--' }}">
                     </div>
                     <div class="browse-sub-section-sidebar-details-info-child">
-                        <div>RATE</div>
-                        <span id="browse-sub-section-sidebar-details-rating" class="fill-width">10.0</span>
+                        <div>SCORE</div>
+                        <input id="browse-sub-section-sidebar-details-score" class="" type="number" wire:model.debounce.700ms="movie.score" min="0.0" max="10.0" step="0.1" placeholder="6.3">
                     </div>
                     <div class="browse-sub-section-sidebar-details-info-child">
                         <div>LANG</div>
-                        <span id="browse-sub-section-sidebar-details-lang" class="fill-width">JP EN</span>
+                        <input id="browse-sub-section-sidebar-details-language" class="fill-width" type="text" wire:model.debounce.700ms="movie.language" placeholder="EN, JP">
                     </div>
                     <div class="browse-sub-section-sidebar-details-info-child">
                         <div>SUB</div>
-                        <span id="browse-sub-section-sidebar-details-subtitle" class="fill-width">EN ZH</span>
+                        <input id="browse-sub-section-sidebar-details-subtitle" class="fill-width" type="text" wire:model.debounce.700ms="movie.subtitle" placeholder="EN, ZH">
                     </div>
                     <div class="browse-sub-section-sidebar-details-info-child">
                         <div>DUR</div>
-                        <span id="browse-sub-section-sidebar-details-duration" class="fill-width">189m</span>
+                        <input id="browse-sub-section-sidebar-details-runtime" class="fill-width" type="text" wire:model.debounce.700ms="movie.runtime" placeholder="160">
                     </div>
                 </div>
                 <div id="browse-sub-section-sidebar-details-full" class="flex fill-width browse-sub-section-box-2">
                     <div class="flex browse-sub-section-sidebar-details-full-child fill-width">
                         <div>GENRE</div>
-                        <span id="browse-sub-section-sidebar-details-genre"  class="fill-width">FANTASY DRAMA ROMANCE ANIMATION</span>
+                        <input id="browse-sub-section-sidebar-details-genre" class="fill-width" type="string" wire:model.debounce.700ms="movie.genre" placeholder="DRAMA, THRILLER, ROMANCE">
                     </div>
                     <div class="flex browse-sub-section-sidebar-details-full-child fill-width">
                         <div>COUNTRY</div>
-                        <span id="browse-sub-section-sidebar-details-country" class="fill-width">JAPAN</span>
+                        <input id="browse-sub-section-sidebar-details-country" class="fill-width" type="string" wire:model.debounce.700ms="movie.country" placeholder="NEVERLAND">
                     </div>
                     <div class="flex browse-sub-section-sidebar-details-full-child fill-width">
                         <div>DIRECTOR</div>
-                        <span id="browse-sub-section-sidebar-details-director" class="fill-width">DIRECTOR NAME</span>
+                        <input id="browse-sub-section-sidebar-details-director" class="fill-width" type="string" wire:model.debounce.700ms="movie.director" placeholder="AH KEONG">
                     </div>
                     <div class="flex browse-sub-section-sidebar-details-full-child fill-width">
                         <div>CAST</div>
-                        <span id="browse-sub-section-sidebar-details-cast" class="fill-width">ACTOR NAME<br>ACTOR NAME</span>
+                        <textarea id="browse-sub-section-sidebar-details-cast" class="fill-width" wire:model.debounce.700ms="movie.cast" placeholder="ALI BIN ABU BAKAR [enter]&#13;&#10;PAK SAMAD [enter]&#13;&#10;AH BIN"></textarea>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="browse-sub-section-main">
+        <div id="browse-sub-section-main" class="fill-width">
             <div id="browse-sub-section-main-details" class="browse-sub-section-box">
                 <div>STORYLINE</div>
-                <p id="browse-sub-section-main-details-desc2">This is a case-sensitive movie description area. </p>
+                <textarea id="browse-sub-section-main-details-desc2" class="fill-width" wire:model.debounce.700ms="movie.description2" rows="5" placeholder="This is a case-sensitive movie description area. &#13;&#10;Some input fields will be auto-formatted upon input completion. "></textarea>
             </div>
         </div>
     </div>
@@ -139,6 +140,15 @@
             margin: 10vh 4rem;
         }
 
+        div#browse-sub-cover div#browse-sub-cover-details input{
+            font-size: 1rem;
+            /* margin: 1rem 0rem; */
+            text-shadow: 0px 0px 2rem rgba(0,0,0,.7);
+            color: whitesmoke;
+            /* font-family: Roboto-thin; */
+            border-radius: unset;
+        }
+
         div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-top{
             font-family: Roboto-light;
             opacity: 0.7;
@@ -146,14 +156,14 @@
             justify-content: flex-start;
         }
 
-        div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-top span{
+        div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-top input{
             border: 1px solid whitesmoke;
-            border-radius: 7%;
+            /* border-radius: 7%; */
             margin: .1rem .2rem;
             padding: .2rem .5rem;
             display: block;
             min-width: .5rem;
-            min-height: 1rem;
+            min-height: 2rem;
         }
 
         /* div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-top span[contenteditable="true"]:hover, 
@@ -171,23 +181,29 @@
             margin: 1rem 0rem;
         } */
 
-        div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-main input#browse-sub-cover-details-title{
+        /* div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-main input#browse-sub-cover-details-title{
             font-size: 5rem;
             margin: 1rem 0rem;
             text-shadow: 0px 0px 2rem rgba(0,0,0,.7);
             color: whitesmoke;
             font-family: Roboto-thin;
+        } */
+
+        div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-main input#browse-sub-cover-details-title{
+            font-size: 5rem;
+            margin: 1rem 0rem;
+            font-family: Roboto-thin;
+            font-weight: 700;
         }
 
-        /* here */
-
-        div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-main h2{
+        div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-main input#browse-sub-cover-details-title2{
             font-style: italic;
             font-size: 2rem;
             margin: 1rem 0rem;
+            font-weight: 700;
         }
 
-        div#browse-sub-cover div#browse-sub-cover-details div#browse-sub-cover-details-desc{
+        div#browse-sub-cover div#browse-sub-cover-details input#browse-sub-cover-details-desc{
             margin: 3rem 1rem;
             border-left: 2px solid #f5f5f5d4;
             padding: 1rem 1rem;
@@ -233,17 +249,29 @@
         }
         
         div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child{
-            margin: 0rem 1rem;
+            /* margin: 0rem 1rem; */
         }
 
         div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child div{
             font-size: 0.7rem;
         }
 
-        div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child span{
+        div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child input{
             color: teal;
             min-height: 1rem;
             display: block;
+            /* margin: 0;
+            padding: 0.2rem;
+            color: teal; */
+
+        }
+
+        div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child input#browse-sub-section-sidebar-details-score, 
+        div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child input#browse-sub-section-sidebar-details-language, 
+        div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child input#browse-sub-section-sidebar-details-subtitle,
+        div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child input#browse-sub-section-sidebar-details-runtime
+        {
+            width: 3rem;
         }
 
         /* div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child span[contenteditable="true"]:hover, 
@@ -251,36 +279,13 @@
             box-shadow: 0px 1px 0px darkslategray;
         } */
 
-        div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child input{
-            margin: 0;
-            padding: 0.2rem;
-            color: teal;
-        }
-
-        div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child span#browse-sub-section-sidebar-details-duration{
+        div#browse-sub-section div.browse-sub-section-box .browse-sub-section-sidebar-details-info-child span#browse-sub-section-sidebar-details-runtime{
             text-transform: none;
         }
         
 
         div#browse-sub-section div.browse-sub-section-box #browse-sub-section-sidebar-details-full{
             padding: 1rem 0rem;
-        }
-
-        div#browse-sub-section div.browse-sub-section-box#browse-sub-section-main-details{
-            /* margin: 1rem 0 0 1rem; */
-            color: #645938;
-            padding-right: 2rem;
-        }
-
-        div#browse-sub-section div.browse-sub-section-box#browse-sub-section-main-details div{
-            font-size: 0.7rem;
-        }
-
-        div#browse-sub-section div.browse-sub-section-box#browse-sub-section-main-details p{
-            color: #97885b;
-            margin: .8rem 0 .5rem;
-            font-size: 1.1rem;
-            line-height: 1.4rem;
         }
 
         div#browse-sub-section div.browse-sub-section-box-2{
@@ -310,14 +315,36 @@
             font-style: italic;
         }
 
-        div#browse-sub-section div.browse-sub-section-box-2 .browse-sub-section-sidebar-details-full-child span{
+        div#browse-sub-section div.browse-sub-section-box-2 .browse-sub-section-sidebar-details-full-child input,
+        div#browse-sub-section div.browse-sub-section-box-2 .browse-sub-section-sidebar-details-full-child textarea
+        {
             word-wrap: break-word;
             min-height: 1rem;
             display: inline-block;
+            text-align: center;
+            font-size: 1rem;
         }
 
-        div#browse-sub-section div.browse-sub-section-box-2 .browse-sub-section-sidebar-details-full-child span#browse-sub-section-sidebar-details-genre{
+        div#browse-sub-section div.browse-sub-section-box-2 .browse-sub-section-sidebar-details-full-child input#browse-sub-section-sidebar-details-genre{
             word-spacing: .4rem;
+        }
+
+
+        div#browse-sub-section div.browse-sub-section-box#browse-sub-section-main-details{
+            /* margin: 1rem 0 0 1rem; */
+            color: #645938;
+            padding-right: 2rem;
+        }
+
+        div#browse-sub-section div.browse-sub-section-box#browse-sub-section-main-details div{
+            font-size: 0.7rem;
+        }
+
+        div#browse-sub-section div.browse-sub-section-box#browse-sub-section-main-details textarea{
+            color: #97885b;
+            margin: .8rem 0 .5rem;
+            font-size: 1.1rem;
+            line-height: 1.4rem;
         }
 
 
