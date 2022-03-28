@@ -29,14 +29,14 @@ class Node extends Component
     }
 
     public function mount(){
-        $this->user_movies = auth()->user()->movies;
+        $this->user_movies = auth()->user()->movies()->latest()->get();
         $this->user_cart = auth()->user()->cart;
         if($this->nodeMode == 'library'){
             $this->movies = $this->user_movies;
         }else if($this->nodeMode == 'cart'){
             $this->movies = $this->user_cart;
         }else{
-            $this->movies = Movie::all();
+            $this->movies = Movie::latest()->get();
         }
     }
 
