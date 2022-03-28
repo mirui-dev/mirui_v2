@@ -29,7 +29,8 @@ class Subcontent extends Component
             // $this->emit('dashboard.subcontent.'.$view.'.contentHandler', $viewData);
             // return view('livewire.dashboard.subcontent.'.$view, $viewData);
         }
-        return view('livewire.dashboard.subcontent', $viewData ?? []);
+        // return view('livewire.dashboard.subcontent', $viewData ?? []);
+        return view('livewire.dashboard.subcontent');
     }
 
     public function viewHandler($subcontent = NULL, $data = NULL){
