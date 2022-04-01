@@ -7,7 +7,7 @@
         </div>
         <div id="browse-action" class="flex content-width">
             @if($isCheckoutApplicable)
-            <div id="browse-action-checkout" class="flex" wire:click="handler()">
+            <div id="browse-action-checkout" class="flex" wire:click="checkoutHandler()">
                 <span class="lnr lnr-enter"></span>
                 <span>CHECKOUT</span>
             </div>

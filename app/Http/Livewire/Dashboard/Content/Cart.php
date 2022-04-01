@@ -12,6 +12,8 @@ class Cart extends Component
 
     public $isCheckoutApplicable = false;
 
+    protected $subcontentnav_checkout = ['back'];
+
     protected $listeners = [
         'dashboard.content.cart.refresh' => 'mount',
     ];
@@ -25,6 +27,11 @@ class Cart extends Component
 
     public function mount(){
         $this->isCheckoutApplicable = boolval(count(auth()->user()->cart));
+    }
+
+    public function checkoutHandler(){
+        $this->emit('dashboard.subcontent.viewHandler', 'transaction', ['view' => 'checkout']);
+        $this->emit('dashboard.subcontentnav.navStateHandler', $this->subcontentnav_checkout);
     }
 
 }
