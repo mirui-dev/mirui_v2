@@ -20,6 +20,7 @@ class Transaction extends Component
     protected $listeners = [
         'dashboard.subcontent.transaction.viewHandler' => 'viewHandler',
         'dashboard.subcontent.transaction.checkout.processing' => 'bufferingHandler',
+        'dashboard.subcontent.transaction.topup.processing' => 'bufferingHandler',
     ];
 
     // erm. it gets confusing now. okay. 
