@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'standards' => [
+    'defaults' => [
         'coins' => [
             'myr_equivalent' => 5,
         ],
