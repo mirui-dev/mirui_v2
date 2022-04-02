@@ -18,4 +18,8 @@ class Transaction extends Model
         'is_paid' => false,
     ];
 
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }

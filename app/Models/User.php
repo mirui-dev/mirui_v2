@@ -74,4 +74,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Movie::class, 'cart_user', 'user_id', 'movie_id')->withTimestamps();
     }
 
+    // one-to-many: user()->transactions
+    public function transactions(){
+        return $this->hasMany(Transaction::class);
+    }
+
 }
