@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            $table->boolean('isVisible');
+            $table->boolean('is_visible');
             $table->string('title');
             $table->string('title2')->nullable();
             $table->string('description')->nullable();
