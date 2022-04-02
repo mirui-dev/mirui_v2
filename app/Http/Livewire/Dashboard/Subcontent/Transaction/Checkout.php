@@ -49,8 +49,8 @@ class Checkout extends Component
         $this->emit('dashboard.subcontent.transaction.checkout.processing', $this->isBuffering);
 
         //update userCoin
-        // auth()->user()->coin = $this->userCoin - $this->totalMovieCoin;
-        // auth()->user()->save();
+        auth()->user()->coins = $this->userCoin - $this->totalMovieCoin;
+        auth()->user()->save();
 
         //insert into db
         $userCart = auth()->user()->cart;
