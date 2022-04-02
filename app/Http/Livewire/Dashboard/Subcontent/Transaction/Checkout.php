@@ -34,7 +34,7 @@ class Checkout extends Component
         $this->totalMovieCoin = $this->totalMovieCount * $this->movieCoin;
 
         //user's coin
-        $this->userCoin = auth()->user()->coin ?? 1000;
+        $this->userCoin = auth()->user()->coins;
 
         // true if not enough, else false. 
         $this->isInsufficientRam = !($this->userCoin >= $this->totalMovieCoin);
