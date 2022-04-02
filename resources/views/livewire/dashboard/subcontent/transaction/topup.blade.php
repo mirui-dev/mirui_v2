@@ -1,6 +1,6 @@
 <div id="transaction-content-container" class="flex max-width {{ $isBuffering ? 'disabled' : '' }}">
 
-    {{ $errors }}
+    {{-- $errors --}}
 
     <div id="transaction-content-payment-prompt" class="flex">
         <div id="transaction-content-payment-prompt-card" class="flex">
