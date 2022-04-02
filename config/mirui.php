@@ -3,7 +3,7 @@
 return [
     'defaults' => [
         'coins' => [
-            'myr_equivalent' => 5,
+            'multiplier' => 2,
         ],
         'movie' => [
             'coins' => 5,
