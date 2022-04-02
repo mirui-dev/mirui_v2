@@ -1,7 +1,7 @@
 <div class="max-width max-height"> <!-- livewire requirement -->
 
     <div id="profile-overview" class="flex max-width max-height">
-        <div id="profile-overview-usercard" class="flex content-height content-width disabled">
+        <div id="profile-overview-usercard" class="flex content-height content-width">
             <div id="profile-overview-usercard-details" class="flex fill-width">
                 <label for="profile-overview-usercard-details-avatar-core">
                     <div id="profile-overview-usercard-details-avatar">
@@ -12,11 +12,11 @@
                     <div>
                         Welcome,  
                     </div>
-                    <span id="profile-overview-usercard-details-greeter-username">--</spam>
+                    <span id="profile-overview-usercard-details-greeter-username">{{ auth()->user()->name }}</spam>
                 </div>
             </div>
-            <div id="profile-overview-usercard-details-coin" class="fill-width" onclick="contentControl('transaction', true)">
-                You have -- coin(s) remaining. Click here to add coins. 
+            <div id="profile-overview-usercard-details-coin" class="fill-width" wire:click="topupHandler()">
+                You have {{ auth()->user()->coins }} coin(s) remaining. Click here to add coins. 
             </div>
         </div>
     </div>
