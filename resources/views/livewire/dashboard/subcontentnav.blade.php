@@ -1,4 +1,4 @@
-<div id="dashboard-content-sub-nav" class="flex {{ $subcontentnavVisibilityClass }}">
+<div id="dashboard-content-sub-nav" class="flex {{ $subcontentnavVisibilityClass }}" wire:loading.class="disabled" wire:target="handler">
     <div id="dashboard-content-sub-nav-container" class="flex content-height">
 
         {{-- @if($substateAction ?? false && $substateActionDismiss ?? false) --}}

@@ -1,4 +1,4 @@
-<div id="dashboard-nav-container" class="flex fill-width">
+<div id="dashboard-nav-container" class="flex fill-width" wire:loading.delay.class="disabled" wire:target="handler">
     <div id="dashboard-nav-greet" class="flex fill-width">
         <p id="dashboard-nav-greet-message" onclick="window.location = root + ''" style="{{ $isAdmin ? 'color: darkred' : ' ' }}">{{ $greeterContent }}</p>
         <!-- <p id="dashboard-nav-greet-time">23:38</p> -->

@@ -1,4 +1,4 @@
-<div class="max-width max-height"> <!-- livewire requirement -->
+<div class="max-width max-height" wire:loading.delay.class="disabled" wire:target="checkoutHandler"> <!-- livewire requirement -->
     
     <!-- inherited from browse.php -->
     <div class="flex fill-width browse-float">

@@ -1,4 +1,4 @@
-<div id="browse-gallery" class="flex content-height">
+<div id="browse-gallery" class="flex content-height" wire:loading.delay.class="disabled" wire:target="handler">
     @foreach($movies as $movie)
     <div id="browse-gallery-node-{{$movie->id}}" class="browse-gallery-node flex" wire:click="handler({{ $movie->id }})" >
         <span class="browse-gallery-node-score content-width">{{$movie->score}}</span>

@@ -1,4 +1,4 @@
-<div class="max-width max-height"> <!-- livewire requirement -->
+<div class="max-width max-height" wire:loading.class="disabled" wire:target="createHandler"> <!-- livewire requirement -->
 
     <div class="flex fill-width browse-float">
         <div id="browse-search" class="flex fill-width">
