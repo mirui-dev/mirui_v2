@@ -56,6 +56,19 @@
 
         @livewireScripts
 
+        <script>
+
+            // override session timeout behaviour
+            // https://github.com/livewire/livewire/pull/1146
+            window.livewire.onError(statusCode => {
+                if(statusCode === 419){
+                    window.location.reload();
+                    return false;
+                }
+            })
+            
+        </script>
+
     </body>
 
 </html>
