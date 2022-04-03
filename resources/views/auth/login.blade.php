@@ -1,48 +1,77 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<html>
 
-        <x-jet-validation-errors class="mb-4" />
+    <head>
+        <title>mirui</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+        <link rel="stylesheet" type="text/css" href="{{asset('css')}}/base.css">
+        <link rel="stylesheet" type="text/css" href="{{asset('css')}}/font.css">
+        <link rel="stylesheet" type="text/css" href="{{asset('css')}}/mirui.css">
+        <link rel="stylesheet" href="{{asset('css')}}/mirui-auth.css">
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+        <script src="{{asset('js')}}/base.js"></script>
+        <script src="{{asset('js/views')}}/mirui-auth.js"></script>
+        <script src="{{asset('js/views')}}/mirui-auth-login.js"></script>
+        <script src="{{asset('js/components')}}/noti.js"></script>
 
+
+        <script>
+            var root = './../../';
+        </script>
+
+        <style>
+            :root{
+                --global-article-background: url::asset('image')/hero-fallback.jpg;
+                --global-article-background-position: center;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div id="global-noti-parent" class="flex fill-width">
+        </div>
+        <header class="flex">
+            <nav id="global-nav" class="flex">
+                <a id="global-nav-menu-toggle" href="./../../">BACK [<]</a>
+                <h1><a class="font-pri font-nohover" href="">mirui</a></h1>
+                <div class="container">
+                    <div class="row">
+                        <form action="{{route('login-user')}}" method="post">
+                        @if(Session::has('success'))
+                            <div class="alert alert-success">{{Session::get('success')}}</div>
+                        @endif
+                        @if(Session::has('fail'))
+                            <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                        @endif
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <div class="flex flex-wrap">
+                                <input type="email" class="form-control" placeholder="Email"  name="email" value="">
+                                <span class="text-danger">@error('email'){{$message}} @enderror</span>
+                            </div>
+                            <div class="flex flex-wrap">
+                                <input type="password" class="form-control" placeholder="Password" name="password">
+                                <span class="text-danger">@error('password'){{$message}} @enderror</span>
+                            </div>
+                            <div class="flex flex-wrap">
+                                <button type="submit">Login</button>
+                                
+                            </div>
+                            <div class="flex flex-wrap">
+                            <a href="{{url('register')}}">REGISTER</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <p id="global-nav-label">Illust. by 网易游戏</p>
+            </nav>
+        </header>
+
+        <footer class="font-pri flex fill-width">
             <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                COPYRIGHT © 2020, MIRUI MEDIA CORPORATION. (ASIA)
             </div>
+        </footer>
+    </body>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+</html>

@@ -5,6 +5,7 @@ use App\Http\Livewire\Index;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Dashboard\Contactus;
 use App\Http\Livewire\Dashboard\Aboutus;
+use App\Http\Controllers\CustomAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,14 @@ use App\Http\Livewire\Dashboard\Aboutus;
 */
 Route::get('/', Index::Class)->name('mirui.index');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', Dashboard::class)->name('mirui.dashboard');
 
 Route::get('contactus',Contactus::class)->name('mirui.contactus');
 
 Route::get('aboutus',Aboutus::class)->name('mirui.aboutus');
 
-// Route::get('/dashboard', Dashboard::class)->name('mirui.dashboard');
+Route::get('/login',[CustomAuthController::class,'login'])->middleware('alreadyLoggedIn');
+Route::get('/register',[CustomAuthController::class,'register'])->middleware('alreadyLoggedIn');
+Route::post('/register-user',[CustomAuthController::class,'registerUser'])->name('register-user');
+Route::post('/login-user',[CustomAuthController::class,'loginUser'])->name('login-user');
+Route::get('/dashboard', [CustomAuthController::class,'dashboard'])->middleware('isLoggedIn');
+Route::get('/logout',[CustomAuthController::class,'logout']);

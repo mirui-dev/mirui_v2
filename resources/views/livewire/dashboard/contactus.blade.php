@@ -58,7 +58,7 @@
                         <a href="./../aboutus/">ABOUT MIRUI</a>
                     </li>
                     <li>
-                       / <a href="./../contactus/">CONTACT US</a>
+                       <a href="./../contactus/">CONTACT US</a>
                     </li>
                 </ul>
                 <p id="global-nav-label">Illust. by 网易游戏</p>

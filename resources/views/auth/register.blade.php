@@ -1,60 +1,77 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html>
 
-        <x-jet-validation-errors class="mb-4" />
+    <head>
+        <title>mirui</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+        <link rel="stylesheet" type="text/css" href="{{asset('css')}}/base.css">
+        <link rel="stylesheet" type="text/css" href="{{asset('css')}}/font.css">
+        <link rel="stylesheet" type="text/css" href="{{asset('css')}}/mirui.css">
+        <link rel="stylesheet" href="{{asset('css')}}/mirui-auth.css">
 
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
+        <script src="{{asset('js')}}/base.js"></script>
+        <script src="{{asset('js/views')}}/mirui-auth.js"></script>
+        <script src="{{asset('js/views')}}/mirui-auth-register.js"></script>
+        <script src="{{asset('js/components')}}/noti.js"></script>
 
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+        <script>
+            var root = './../../';
+        </script>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
+        <style>
+            :root{
+                --global-article-background: url::asset('image')/hero-fallback.jpg;
+                --global-article-background-position: center;
+            }
+        </style>
+    </head>
 
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
+    <body>
+        <div id="global-noti-parent" class="flex fill-width">
+        </div>
+        <header class="flex">
+            <nav id="global-nav" class="flex">
+                <a id="global-nav-menu-toggle" href="{{asset('login')}}">BACK [<]</a>
+                <h1><a class="font-pri font-nohover" href="">mirui</a></h1>
+                <div class="container">
+                    <div class="row">
+                        <form action="{{route('register-user')}}" method="post">
+                            @if(Session::has('success'))
+                            <div class="alert alert-success">{{Session::get('success')}}</div>
+                            @endif
+                            @if(Session::has('fail'))
+                            <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                            @endif
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <div class="flex flex-wrap">
+                                <input id="auth-new-form-name" type="text" class="form-control" placeholder="Display Name" name="name" value="{{old('name')}}">
+                                <span class="text-danger">@error('name'){{$message}} @enderror</span>
                             </div>
-                        </div>
-                    </x-jet-label>
+                            <div class="flex flex-wrap">
+                                <input id="auth-new-form-email" type="email" class="form-control" placeholder="Email" name="email" value="{{old('email')}}">
+                                <span class="text-danger">@error('email'){{$message}} @enderror</span>
+                            </div>
+                            <div class="flex flex-wrap">
+                                <input id="auth-new-form-password" type="password" class="form-control" placeholder="Password" name="password" value="">
+                                <span class="text-danger">@error('password'){{$message}} @enderror</span>
+                            </div>
+                            <div class="flex flex-wrap">
+                                <button  type="submit">Register</button>
+                            </div>
+                            <div class="flex flex-wrap">
+                            <a href="{{URL::previous()}}">BACK</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            @endif
+                <p id="global-nav-label">Illust. by 网易游戏</p>
+            </nav>
+        </header>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
+        <footer class="font-pri flex fill-width">
+            <div>
+                COPYRIGHT © 2020, MIRUI MEDIA CORPORATION. (ASIA)
             </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </footer>
+    </body>

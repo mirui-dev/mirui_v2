@@ -1,3 +1,8 @@
+<?php
+use Config\Session;
+
+?>
+
 <html>
 
     <head>
@@ -48,14 +53,14 @@
                         <!-- <a href="auth/login"> -->
                             <?php 
                                 if(isset($_SESSION['isAuth']) && $_SESSION['isAuth']){
-                                    echo '<a href="./dashboard/">';
-                                    echo 'DASHBOARD';
-                                    echo '</a></li><li>';
-                                    echo '<a href="./auth/logout/">';
-                                    echo 'SIGN OUT';
+                                  echo '<a href="./dashboard/">';
+                                  echo 'DASHBOARD';
+                                  echo '</a></li><li>';
+                                  echo '<a href="./auth/logout/">';
+                                  echo 'SIGN OUT';
                                 }else{
-                                    echo '<a href="./auth/login/">';
-                                    echo 'SIGN IN';
+                                  echo '<a href="./auth/login/">';
+                                  echo 'SIGN IN';
                                 }
                                 
                             ?>     
