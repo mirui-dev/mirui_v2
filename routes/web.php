@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\Dashboard;
+use App\Http\Controllers\xml;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,8 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', Dashboard::class)->name('mirui.dashboard');
+
+//xml
+Route::get('/xml', [xml::class, 'index'])->name('mirui.xml');
 
 // Route::get('/dashboard', Dashboard::class)->name('mirui.dashboard');
