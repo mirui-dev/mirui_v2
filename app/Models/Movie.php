@@ -26,7 +26,7 @@ class Movie extends Model
         // 'rating' => 'P13',  // prevent set default because will be set automatically as value in model binding on livewire component
         // 'score' => 6.2, 
         'cast' => '{"cast":[]}', 
-        'visual' => '{"poster":"","cover":"","gallery":""}',
+        'visual' => '{"poster":"","cover":"","gallery":[]}',
     ];
 
     /**
