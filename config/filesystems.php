@@ -95,7 +95,8 @@ return [
     */
 
     'links' => [
-        public_path('src/mirui') => storage_path('app/mirui'),
+        public_path('src/mirui/static') => storage_path('app/mirui/static'),
+        public_path('src/mirui/playground') => storage_path('app/mirui/playground'),
     ],
 
 ];
