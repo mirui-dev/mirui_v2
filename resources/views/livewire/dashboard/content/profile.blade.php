@@ -1,11 +1,16 @@
 <div class="max-width max-height"> <!-- livewire requirement -->
 
+    @php
+        $db_profile_picture = auth()->user()->profile_picture_id ?? false;
+        $db_profile_picture_path = $db_profile_picture ? 'url('.Storage::disk(\App\Models\InternalStatic::find($db_profile_picture)->disk)->url(\App\Models\InternalStatic::find($db_profile_picture)->path).')' : '';
+    @endphp
+
     <div id="profile-overview" class="flex max-width max-height">
-        <div id="profile-overview-usercard" class="flex content-height content-width">
+        <div id="profile-overview-usercard" class="flex content-height content-width" wire:loading.class="disabled" wire:target="profile_picture, topupHandler">
             <div id="profile-overview-usercard-details" class="flex fill-width">
                 <label for="profile-overview-usercard-details-avatar-core">
-                    <div id="profile-overview-usercard-details-avatar">
-                    <input id="profile-overview-usercard-details-avatar-core" type="file" accept="image/*" onchange="userAvatarControl()">
+                    <div id="profile-overview-usercard-details-avatar" style="background-image: {{ $profile_picture ? 'url('.$profile_picture->temporaryUrl().')' : $db_profile_picture_path }} ">
+                    <input id="profile-overview-usercard-details-avatar-core" type="file" wire:model="profile_picture" accept="image/*">
                     </div>
                 </label>
                 <div id="profile-overview-usercard-details-greeter" class="flex fill-width">
@@ -15,9 +20,18 @@
                     <span id="profile-overview-usercard-details-greeter-username">{{ auth()->user()->name }}</spam>
                 </div>
             </div>
+            @if(!is_null($profile_picture))
+            <div id="profile-overview-usercard-prompt-avatar-save" class="fill-width" wire:click="profilePictureHandler()">
+                Save Profile Picture
+            </div>
+            <div id="profile-overview-usercard-prompt-avatar-cancel" class="fill-width" wire:click="$set('profile_picture', null)">
+                Cancel
+            </div>
+            @else
             <div id="profile-overview-usercard-details-coin" class="fill-width" wire:click="topupHandler()">
                 You have {{ auth()->user()->coins }} coin(s) remaining. Click here to add coins. 
             </div>
+            @endif
         </div>
     </div>
 
@@ -88,6 +102,20 @@
             user-select: none;
         }
 
+        div#profile-overview div#profile-overview-usercard div#profile-overview-usercard-prompt-avatar-save, 
+        div#profile-overview div#profile-overview-usercard div#profile-overview-usercard-prompt-avatar-cancel{
+            padding: .7rem;
+            background: #150303;
+            font-size: .9rem;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        div#profile-overview div#profile-overview-usercard div#profile-overview-usercard-prompt-avatar-cancel{
+            margin-top: -1rem;
+            background: #00000061;
+        }
 
     </style>
     
