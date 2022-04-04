@@ -79,4 +79,9 @@ class User extends Authenticatable
         return $this->hasMany(Transaction::class);
     }
 
+    // // one-to-many: user()->internalResources
+    // public function internalResources(){
+    //     return $this->hasMany(InternalStatic::class);
+    // }
+
 }
