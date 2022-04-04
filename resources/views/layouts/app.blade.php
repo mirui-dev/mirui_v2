@@ -8,16 +8,16 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="{{ mix('css/font.css') }}">
+        <link rel="stylesheet" href="{{ mix('src/mirui/css/font.css') }}">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/mirui.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/mirui-dashboard.css') }}">
+        <link rel="stylesheet" href="{{ mix('src/mirui/css/mirui.css') }}">
+        <link rel="stylesheet" href="{{ mix('src/mirui/css/mirui-dashboard.css') }}">
 
         @livewireStyles
 
         <!-- Scripts -->
-        <!-- <script src="{{ mix('js/mirui.js') }}" defer></script> -->
+        <!-- <script src="{{ mix('src/mirui/js/mirui.js') }}" defer></script> -->
 
         <!-- <script src="./../src/js/base.js"></script>
         <script src="./../src/js/nav.js"></script>
@@ -42,7 +42,7 @@
 
     </head>
 
-    <body onload="userServer(true);cartServer();libraryServer();//greetInject();">
+    <body>
         <div id="global-noti-parent" class="flex fill-width">
         </div>
         

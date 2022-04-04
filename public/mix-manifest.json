@@ -1,12 +1,12 @@
 {
-    "/vendor/js/app.js": "/vendor/js/app.js",
-    "/js/mirui.js": "/js/mirui.js",
-    "/css/mirui.css": "/css/mirui.css",
-    "/css/font.css": "/css/font.css",
-    "/css/mirui-auth.css": "/css/mirui-auth.css",
-    "/css/mirui-aboutus.css": "/css/mirui-aboutus.css",
-    "/vendor/css/app.css": "/vendor/css/app.css",
-    "/css/mirui-watch.css": "/css/mirui-watch.css",
-    "/css/mirui-dashboard.css": "/css/mirui-dashboard.css",
-    "/css/mirui-contactus.css": "/css/mirui-contactus.css"
+    "/src/vendor/js/app.js": "/src/vendor/js/app.js",
+    "/src/mirui/js/mirui.js": "/src/mirui/js/mirui.js",
+    "/src/mirui/css/mirui.css": "/src/mirui/css/mirui.css",
+    "/src/mirui/css/font.css": "/src/mirui/css/font.css",
+    "/src/mirui/css/mirui-auth.css": "/src/mirui/css/mirui-auth.css",
+    "/src/mirui/css/mirui-aboutus.css": "/src/mirui/css/mirui-aboutus.css",
+    "/src/vendor/css/app.css": "/src/vendor/css/app.css",
+    "/src/mirui/css/mirui-watch.css": "/src/mirui/css/mirui-watch.css",
+    "/src/mirui/css/mirui-dashboard.css": "/src/mirui/css/mirui-dashboard.css",
+    "/src/mirui/css/mirui-contactus.css": "/src/mirui/css/mirui-contactus.css"
 }
