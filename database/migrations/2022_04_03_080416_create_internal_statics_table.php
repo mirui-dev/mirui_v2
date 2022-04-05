@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('internal_static', function (Blueprint $table) {
+        Schema::create('internal_statics', function (Blueprint $table) {
             $table->id();
             // $table->bigInteger('user_id')->nullable();
             // $table->bigInteger('movie_id')->nullable();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('internals_resources');
+        Schema::dropIfExists('internal_statics');
     }
 };

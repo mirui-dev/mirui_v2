@@ -8,14 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class InternalStatic extends Model
 {
     use HasFactory;
-
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'internal_static';  // weird that it cannot auto identify since it is intermediary table. Need to extend as Pivot?
-
+    
     /**
      * The model's default values for attributes.
      *
