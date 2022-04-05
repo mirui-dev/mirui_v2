@@ -3,117 +3,117 @@
 
 @font-face{
     font-family: Barlow-Black;
-    src: url(/fonts/Barlow-Black.ttf?a124fb33fd1d8a32c163cf9a29357512);
+    src: url(/src/mirui/css/fonts/Barlow-Black.ttf?a124fb33fd1d8a32c163cf9a29357512);
     font-weight: 900;
 }
 
 @font-face{
     font-family: Barlow-BlackItalic;
-    src: url(/fonts/Barlow-BlackItalic.ttf?3de0afe6e065f8dae05125202f9146a1);
+    src: url(/src/mirui/css/fonts/Barlow-BlackItalic.ttf?3de0afe6e065f8dae05125202f9146a1);
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face{
     font-family: Barlow-Bold;
-    src: url(/fonts/Barlow-Bold.ttf?2dc03d2e89ef7d9e6ffb66462a62176c);
+    src: url(/src/mirui/css/fonts/Barlow-Bold.ttf?2dc03d2e89ef7d9e6ffb66462a62176c);
     font-weight: 700;
 }
 
 @font-face{
     font-family: Barlow-BoldItalic;
-    src: url(/fonts/Barlow-BoldItalic.ttf?0f546a41f3afd8d5a99dc80ca346480d);
+    src: url(/src/mirui/css/fonts/Barlow-BoldItalic.ttf?0f546a41f3afd8d5a99dc80ca346480d);
     font-weight: 700;
     font-style: italic;
 }
 
 @font-face{
     font-family: Barlow-ExtraBold;
-    src: url(/fonts/Barlow-ExtraBold.ttf?4653fa55aa1a010f39555dcd59b9b7d9);
+    src: url(/src/mirui/css/fonts/Barlow-ExtraBold.ttf?4653fa55aa1a010f39555dcd59b9b7d9);
     font-weight: 800;
 }
 
 @font-face{
     font-family: Barlow-ExtraBoldItalic;
-    src: url(/fonts/Barlow-ExtraBoldItalic.ttf?2ac12abf5aad0f67e7cd76395d491007);
+    src: url(/src/mirui/css/fonts/Barlow-ExtraBoldItalic.ttf?2ac12abf5aad0f67e7cd76395d491007);
     font-weight: 800;
     font-style: italic;
 }
 
 @font-face{
     font-family: Barlow-ExtraLight;
-    src: url(/fonts/Barlow-ExtraLight.ttf?08efebd990fa7eb5163f23aee2c206c7);
+    src: url(/src/mirui/css/fonts/Barlow-ExtraLight.ttf?08efebd990fa7eb5163f23aee2c206c7);
     font-weight: 200;
 }
 
 @font-face{
     font-family: Barlow-ExtraLightItalic;
-    src: url(/fonts/Barlow-ExtraLightItalic.ttf?f7ae614fe2ce8315eebd57a63c793885);
+    src: url(/src/mirui/css/fonts/Barlow-ExtraLightItalic.ttf?f7ae614fe2ce8315eebd57a63c793885);
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face{
     font-family: Barlow-Italic;
-    src: url(/fonts/Barlow-Italic.ttf?46a01a113afb5eab9f6618c7c6000dee);
+    src: url(/src/mirui/css/fonts/Barlow-Italic.ttf?46a01a113afb5eab9f6618c7c6000dee);
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face{
     font-family: Barlow-Light;
-    src: url(/fonts/Barlow-Light.ttf?7e0099c5266078997e2cb44b48bd6da5);
+    src: url(/src/mirui/css/fonts/Barlow-Light.ttf?7e0099c5266078997e2cb44b48bd6da5);
     font-weight: 300;
 }
 
 @font-face{
     font-family: Barlow-LightItalic;
-    src: url(/fonts/Barlow-LightItalic.ttf?ce41daee57de21daf75db7c8056f287f);
+    src: url(/src/mirui/css/fonts/Barlow-LightItalic.ttf?ce41daee57de21daf75db7c8056f287f);
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face{
     font-family: Barlow-Medium;
-    src: url(/fonts/Barlow-Medium.ttf?40a6a9d2b5c96f1bb0c8f6cf4f253a4f);
+    src: url(/src/mirui/css/fonts/Barlow-Medium.ttf?40a6a9d2b5c96f1bb0c8f6cf4f253a4f);
     font-weight: 500;
 }
 
 @font-face{
     font-family: Barlow-MediumItalic;
-    src: url(/fonts/Barlow-MediumItalic.ttf?d66ceaafc8b97dc382ea73f93cf24ec1);
+    src: url(/src/mirui/css/fonts/Barlow-MediumItalic.ttf?d66ceaafc8b97dc382ea73f93cf24ec1);
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face{
     font-family: Barlow-Regular;
-    src: url(/fonts/Barlow-Regular.ttf?952f8963756042f7ccf50992cfd149d0);
+    src: url(/src/mirui/css/fonts/Barlow-Regular.ttf?952f8963756042f7ccf50992cfd149d0);
     font-weight: 400;
 }
 
 @font-face{
     font-family: Barlow-SemiBold;
-    src: url(/fonts/Barlow-SemiBold.ttf?5a6be86b2fa0d383595c8d972ce5d7a6);
+    src: url(/src/mirui/css/fonts/Barlow-SemiBold.ttf?5a6be86b2fa0d383595c8d972ce5d7a6);
     font-weight: 600;
 }
 
 @font-face{
     font-family: Barlow-SemiBoldItalic;
-    src: url(/fonts/Barlow-SemiBoldItalic.ttf?c6369c78d21665b65abef98f4d4b4b21);
+    src: url(/src/mirui/css/fonts/Barlow-SemiBoldItalic.ttf?c6369c78d21665b65abef98f4d4b4b21);
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face{
     font-family: Barlow-Thin;
-    src: url(/fonts/Barlow-Thin.ttf?31c931deacf68a51d5a69ad9874bc2ba);
+    src: url(/src/mirui/css/fonts/Barlow-Thin.ttf?31c931deacf68a51d5a69ad9874bc2ba);
     font-weight: 100;
 }
 
 @font-face{
     font-family: Barlow-ThinItalic;
-    src: url(/fonts/Barlow-ThinItalic.ttf?171d5dcdc4d71282c05174c13e713906);
+    src: url(/src/mirui/css/fonts/Barlow-ThinItalic.ttf?171d5dcdc4d71282c05174c13e713906);
     font-weight: 100;
     font-style: italic;
 }
@@ -123,78 +123,78 @@
 
 @font-face{
     font-family: Roboto-Black;
-    src: url(/fonts/Roboto-Black.ttf?1224b64c95f897e542d9bfdd3861b0ed);
+    src: url(/src/mirui/css/fonts/Roboto-Black.ttf?1224b64c95f897e542d9bfdd3861b0ed);
     font-weight: 900;
 }
 
 @font-face{
     font-family: Roboto-BlackItalic;
-    src: url(/fonts/Roboto-BlackItalic.ttf?279b831d1cc21955a97a4b73e07d204e);
+    src: url(/src/mirui/css/fonts/Roboto-BlackItalic.ttf?279b831d1cc21955a97a4b73e07d204e);
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face{
     font-family: Roboto-Bold;
-    src: url(/fonts/Roboto-Bold.ttf?4f39c5796e60c9d8e7327a00e9a4442e);
+    src: url(/src/mirui/css/fonts/Roboto-Bold.ttf?4f39c5796e60c9d8e7327a00e9a4442e);
     font-weight: 700;
 }
 
 @font-face{
     font-family: Roboto-BoldItalic;
-    src: url(/fonts/Roboto-BoldItalic.ttf?ad2445ca4e46908fbf7bb4e0fff71139);
+    src: url(/src/mirui/css/fonts/Roboto-BoldItalic.ttf?ad2445ca4e46908fbf7bb4e0fff71139);
     font-weight: 700;
     font-style: italic;
 }
 
 @font-face{
     font-family: Roboto-Italic;
-    src: url(/fonts/Roboto-Italic.ttf?2a1b89d7506c26fb931b47bbc5d8c926);
+    src: url(/src/mirui/css/fonts/Roboto-Italic.ttf?2a1b89d7506c26fb931b47bbc5d8c926);
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face{
     font-family: Roboto-Light;
-    src: url(/fonts/Roboto-Light.ttf?0cea39826bd36bbfe33076c544e3a1af);
+    src: url(/src/mirui/css/fonts/Roboto-Light.ttf?0cea39826bd36bbfe33076c544e3a1af);
     font-weight: 300;
 }
 
 @font-face{
     font-family: Roboto-LightItalic;
-    src: url(/fonts/Roboto-LightItalic.ttf?f3afeb2d078386350b6657727c8de98e);
+    src: url(/src/mirui/css/fonts/Roboto-LightItalic.ttf?f3afeb2d078386350b6657727c8de98e);
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face{
     font-family: Roboto-Medium;
-    src: url(/fonts/Roboto-Medium.ttf?13a29228654d5c5ec9c482a267efa4af);
+    src: url(/src/mirui/css/fonts/Roboto-Medium.ttf?13a29228654d5c5ec9c482a267efa4af);
     font-weight: 500;
 }
 
 @font-face{
     font-family: Roboto-MediumItalic;
-    src: url(/fonts/Roboto-MediumItalic.ttf?17d0cac04a3f124945e14d55323a71d5);
+    src: url(/src/mirui/css/fonts/Roboto-MediumItalic.ttf?17d0cac04a3f124945e14d55323a71d5);
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face{
     font-family: Roboto-Regular;
-    src: url(/fonts/Roboto-Regular.ttf?03523cf578d69fa923226ff457b92d90);
+    src: url(/src/mirui/css/fonts/Roboto-Regular.ttf?03523cf578d69fa923226ff457b92d90);
     font-weight: 400;
 }
 
 @font-face{
     font-family: Roboto-Thin;
-    src: url(/fonts/Roboto-Thin.ttf?c38fab23fc1c36894f10dd8014479b53);
+    src: url(/src/mirui/css/fonts/Roboto-Thin.ttf?c38fab23fc1c36894f10dd8014479b53);
     font-weight: 100;
 }
 
 @font-face{
     font-family: Roboto-ThinItalic;
-    src: url(/fonts/Roboto-ThinItalic.ttf?082b9e840d3a498e8a3c8119f3a7132a);
+    src: url(/src/mirui/css/fonts/Roboto-ThinItalic.ttf?082b9e840d3a498e8a3c8119f3a7132a);
     font-weight: 100;
     font-style: italic;
 }
@@ -202,7 +202,7 @@
 /* Linearicons-Free */
 @font-face {
 	font-family: 'Linearicons-Free';
-	src:url(/fonts/Linearicons-Free.ttf?5cbe0a85581dc42087ac6646f579502e);
+	src:url(/src/mirui/css/fonts/Linearicons-Free.ttf?5cbe0a85581dc42087ac6646f579502e);
 	font-weight: normal;
 	font-style: normal;
 }

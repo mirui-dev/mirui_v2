@@ -41,7 +41,7 @@ div .auth--low{
 } */
 
 :root{
-    --global-article-background: url(/images/hero-fallback.jpg?83c0541680e852b076c34339a929d969);
+    --global-article-background: url(/src/mirui/images/hero-fallback.jpg?83c0541680e852b076c34339a929d969);
     --global-article-background-position: center;
 }
 

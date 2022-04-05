@@ -13,6 +13,13 @@ const mix = require('laravel-mix');
 
 //  mix.setPublicPath('public/src');
 
+mix.options({
+    fileLoaderDirs: {
+        'images': 'src/mirui/images',
+        'fonts': 'src/mirui/css/fonts',
+    }
+});
+
 mix.js('resources/vendor/js/app.js', 'src/vendor/js')
     .postCss('resources/vendor/css/app.css', 'src/vendor/css', [
         require('postcss-import'),
