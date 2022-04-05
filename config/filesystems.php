@@ -22,7 +22,7 @@ return [
     |
     | Here you may configure as many filesystem "disks" as you wish, and you
     | may even configure multiple disks of the same driver. Defaults have
-    | been setup for each driver as an example of the required options.
+    | been set up for each driver as an example of the required values.
     |
     | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
@@ -33,42 +33,16 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
+            'throw' => false,
         ],
 
-        'mirui-static' => [
+        'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/mirui/static'),
-            'url' => env('APP_URL').'/src/mirui/static',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
+            'throw' => false,
         ],
-
-        'mirui-static-priv' => [
-            'driver' => 'local',
-            'root' => storage_path('app/mirui/static/priv'),
-            'url' => env('APP_URL').'/src/mirui/static/priv',
-            'visibility' => 'private',
-        ],
-
-        'mirui-tmp' => [
-            'driver' => 'local',
-            'root' => storage_path('app/mirui/playground'),
-            'url' => env('APP_URL').'/src/mirui/playground',
-            'visibility' => 'private',
-        ],
-
-        // 'mirui-static-movie' => [
-        //     'driver' => 'local',
-        //     'root' => storage_path('app/mirui/static/movie'),
-        //     'url' => env('APP_URL').'/src/mirui/static/movie',
-        //     'visibility' => 'public',
-        // ],
-
-        // 'mirui-static-user' => [
-        //     'driver' => 'local',
-        //     'root' => storage_path('app/mirui/static/user'),
-        //     'url' => env('APP_URL').'/src/mirui/static/user',
-        //     'visibility' => 'private',
-        // ],
 
         's3' => [
             'driver' => 's3',
@@ -79,6 +53,7 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+            'throw' => false,
         ],
 
     ],
@@ -95,8 +70,7 @@ return [
     */
 
     'links' => [
-        public_path('src/mirui/static') => storage_path('app/mirui/static'),
-        public_path('src/mirui/playground') => storage_path('app/mirui/playground'),
+        public_path('storage') => storage_path('app/public'),
     ],
 
 ];

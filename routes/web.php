@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Livewire\Dashboard;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +16,3 @@ use App\Http\Livewire\Dashboard;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', Dashboard::class)->name('mirui.dashboard');
-
-// Route::get('/dashboard', Dashboard::class)->name('mirui.dashboard');
