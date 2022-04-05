@@ -1,0 +1,9 @@
+/* css.components.footer */
+footer{
+    bottom: 0;
+    position: fixed;
+    padding: 5px;
+    font-size: 0.75rem;
+    opacity: .25;
+    pointer-events: none;
+}

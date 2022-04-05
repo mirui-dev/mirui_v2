@@ -1,0 +1,24 @@
+/* css.page-watch */
+
+body{
+    overflow: hidden;
+}
+
+header{
+    height: 4rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3),rgba(0,0,0,0));
+}
+
+a#global-header-menu-toggle, a#global-nav-menu-toggle{
+    /* margin: 1.5rem; */
+    top: 1.5rem;
+}
+
+section{
+    animation: 1s flyin;
+}
+
+:root{
+    --global-article-background: url(./../../img/core/hero-fallback.jpg);
+    --global-article-background-position: center;
+}

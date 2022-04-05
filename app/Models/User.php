@@ -41,4 +41,27 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // one-to-many: user()->movies
+    public function movies(){
+        // many-to-many relationship: https://laravel.com/docs/9.x/eloquent-relationships#many-to-many-model-structure
+        // specify usage of timestamps on intermediaries: https://laravel.com/docs/9.x/eloquent-relationships#retrieving-intermediate-table-columns
+        return $this->belongsToMany(Movie::class)->withTimestamps();
+    }
+
+    // one-to-many: user()->cart
+    public function cart(){
+        // refer to customizing the name of the intermediate table on above link
+        return $this->belongsToMany(Movie::class, 'cart_user', 'user_id', 'movie_id')->withTimestamps();
+    }
+
+    // one-to-many: user()->transactions
+    public function transactions(){
+        return $this->hasMany(Transaction::class);
+    }
+
+    // // one-to-many: user()->internalResources
+    // public function internalResources(){
+    //     return $this->hasMany(InternalStatic::class);
+    // }
 }

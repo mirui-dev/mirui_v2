@@ -11,7 +11,28 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+// mix.js('resources/js/app.js', 'public/js')
+//     .postCss('resources/css/app.css', 'public/css', [
+//         //
+//     ]);
+
+mix.options({
+    fileLoaderDirs: {
+        'images': 'src/mirui/images',
+        'fonts': 'src/mirui/css/fonts',
+    }
+});
+
+if (mix.inProduction()) {
+    mix.version();
+}
+
+mix.postCss('resources/mirui/css/fonts/font.css', 'src/mirui/css');
+mix.postCss('resources/mirui/css/mirui.css', 'src/mirui/css');
+mix.postCss('resources/mirui/css/views/mirui-aboutus.css', 'src/mirui/css');
+mix.postCss('resources/mirui/css/views/mirui-auth.css', 'src/mirui/css');
+mix.postCss('resources/mirui/css/views/mirui-contactus.css', 'src/mirui/css');
+mix.postCss('resources/mirui/css/views/mirui-dashboard.css', 'src/mirui/css');
+mix.postCss('resources/mirui/css/views/mirui-watch.css', 'src/mirui/css');
+
+mix.js('resources/mirui/js/mirui.js', 'src/mirui/js');

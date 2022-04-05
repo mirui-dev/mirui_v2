@@ -1,0 +1,85 @@
+/* css.components.article */
+
+article{
+    /* background-image: url(./../../../src/img/background/nav-bg.jpg);
+    background-size: cover; */
+    margin: 0 6rem;
+    justify-content: flex-start !important;
+}
+
+article #global-article-container{
+    margin: 0 2rem;
+    max-width: 24rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 2rem;
+    background: #181819eb;
+    border-radius: .7rem;
+    box-shadow: 0 0 20px 7px #0000006b;
+}
+
+article #global-article-title{
+    /* padding-bottom: 0.6rem;
+    border-bottom: .5px solid #bd3a3a5e; */
+
+    margin-bottom: 0;
+}
+
+article #global-article-subtitle{
+    /* display: inline; */
+    font-size: 1rem;
+    padding: 0 .6rem;
+    opacity: .7;
+
+    padding-bottom: 0.6rem;
+    border-bottom: .5px solid #bd3a3a5e;
+    margin-top: 0rem;
+}
+
+article #global-article-body{
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+article::after{
+    background-image: var(--global-article-background);
+    background-size: cover;
+    background-position: var(--global-article-background-position);
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -9999;
+    opacity: .6;
+    box-shadow: inset 0 0 100px black;
+}
+
+/* preload image */
+/* article::before{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: var(--global-article-preload-background);
+    opacity: 0;
+    z-index: -9999; 
+    display: none;
+} */
+
+/* fallback */
+:root{
+    --global-article-background: var(--global-background-default);
+    --global-article-background-position: center;
+}
+
+/* media rule: small device */
+@media only screen and (max-width: 767px) {
+    article{
+        margin: 0 3rem;
+    }
+}

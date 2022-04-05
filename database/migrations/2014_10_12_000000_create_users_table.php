@@ -20,6 +20,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->unsignedSmallInteger('coins');
+            $table->bigInteger('profile_picture_id')->nullable();
             $table->timestamps();
         });
     }

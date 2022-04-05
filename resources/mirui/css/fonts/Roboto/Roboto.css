@@ -1,0 +1,80 @@
+/* Roboto
+    https://fonts.google.com/specimen/Roboto?preview.text=COPYRIGHT+%C2%A9+2020,+MIRU!+MEDIA+CORPORATION.+(ASIA)&preview.text_type=custom&preview.size=13 */
+
+@font-face{
+    font-family: Roboto-Black;
+    src: url(./Roboto-Black.ttf);
+    font-weight: 900;
+}
+
+@font-face{
+    font-family: Roboto-BlackItalic;
+    src: url(./Roboto-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Roboto-Bold;
+    src: url(./Roboto-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: Roboto-BoldItalic;
+    src: url(./Roboto-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Roboto-Italic;
+    src: url(./Roboto-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Roboto-Light;
+    src: url(./Roboto-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face{
+    font-family: Roboto-LightItalic;
+    src: url(./Roboto-LightItalic.ttf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Roboto-Medium;
+    src: url(./Roboto-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face{
+    font-family: Roboto-MediumItalic;
+    src: url(./Roboto-MediumItalic.ttf);
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: Roboto-Regular;
+    src: url(./Roboto-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: Roboto-Thin;
+    src: url(./Roboto-Thin.ttf);
+    font-weight: 100;
+}
+
+@font-face{
+    font-family: Roboto-ThinItalic;
+    src: url(./Roboto-ThinItalic.ttf);
+    font-weight: 100;
+    font-style: italic;
+}

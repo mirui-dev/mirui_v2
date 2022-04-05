@@ -177,6 +177,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Internal Service Provider
+        App\Providers\InternalServiceProvider::class,
+
     ],
 
     /*
@@ -192,6 +195,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Cart' => App\Support\Facades\Cart::class,
     ])->toArray(),
 
 ];

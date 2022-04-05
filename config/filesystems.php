@@ -56,6 +56,41 @@ return [
             'throw' => false,
         ],
 
+        'mirui-static' => [
+            'driver' => 'local',
+            'root' => storage_path('app/mirui/static'),
+            'url' => env('APP_URL').'/src/mirui/static',
+            'visibility' => 'public',
+        ],
+
+        'mirui-static-priv' => [
+            'driver' => 'local',
+            'root' => storage_path('app/mirui/static/priv'),
+            'url' => env('APP_URL').'/src/mirui/static/priv',
+            'visibility' => 'private',
+        ],
+
+        'mirui-tmp' => [
+            'driver' => 'local',
+            'root' => storage_path('app/mirui/playground'),
+            'url' => env('APP_URL').'/src/mirui/playground',
+            'visibility' => 'private',
+        ],
+
+        // 'mirui-static-movie' => [
+        //     'driver' => 'local',
+        //     'root' => storage_path('app/mirui/static/movie'),
+        //     'url' => env('APP_URL').'/src/mirui/static/movie',
+        //     'visibility' => 'public',
+        // ],
+
+        // 'mirui-static-user' => [
+        //     'driver' => 'local',
+        //     'root' => storage_path('app/mirui/static/user'),
+        //     'url' => env('APP_URL').'/src/mirui/static/user',
+        //     'visibility' => 'private',
+        // ],
+
     ],
 
     /*
@@ -70,7 +105,8 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        public_path('src/mirui/static') => storage_path('app/mirui/static'),
+        public_path('src/mirui/playground') => storage_path('app/mirui/playground'),
     ],
 
 ];

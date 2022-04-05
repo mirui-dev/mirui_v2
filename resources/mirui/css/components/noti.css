@@ -1,0 +1,60 @@
+/* css.components.noti */
+
+body #global-noti-parent{
+    position: fixed;
+    /* bottom: 0; */
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    margin: 1rem;
+    /* max-width: 22rem; */
+    /* max-width: 58rem; */
+    display: none;
+    /* cursor: pointer; */
+    flex-direction: column;
+    max-height: 14rem;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+
+body .global-noti{
+    background: azure;
+    bottom: 0;
+    right: 0;
+    padding: .7rem 2rem;
+    border-bottom: 4px solid black;
+    margin: .5rem;
+    font-size: .9rem;
+    /* transform: skewx(-10deg); */
+    animation: 1s flyin, .5s notireveal;
+    width: 70%;
+    max-width: 57rem;
+    /* box-shadow: 0px 0px 24px #f0ffff70; */
+    box-shadow: 0px 0px 24px dimgray;
+    text-align: center;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+@keyframes notireveal{
+    0%{
+        padding: 0;
+    }
+    100%{
+        padding: .7rem 2rem;
+    }
+}
+
+@keyframes notidismiss{
+    0%{
+        padding: .7rem 2rem;
+    }
+    100%{
+        padding: 0;
+    }
+}
+
+/* .global-noti p{
+    transform: skewx(10deg);
+} */
