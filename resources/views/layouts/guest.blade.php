@@ -8,17 +8,51 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="{{ mix('src/mirui/css/font.css') }}">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('src/vendor/css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('src/mirui/css/mirui.css') }}">
+        <link rel="stylesheet" href="{{ mix('src/mirui/css/mirui-landing.css') }}">
 
-        <!-- Scripts -->
-        <script src="{{ mix('src/vendor/js/app.js') }}" defer></script>
+        @yield('styles')
+        <!-- <link rel="stylesheet" href="{{ mix('src/mirui/css/mirui-aboutus.css') }}"> -->
+        <!-- <link rel="stylesheet" href="{{ mix('src/mirui/css/mirui-auth.css') }}"> -->
+        <!-- <link rel="stylesheet" href="{{ mix('src/mirui/css/mirui-contactus.css') }}"> -->
+
+        @livewireStyles
+
     </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
+
+    <body class="@yield('body-class')">
+        <div id="global-noti-parent" class="flex fill-width">
         </div>
+
+        <!-- yeild is for normal contents, but slot is for components.  -->
+        @yield('header')
+
+        {{ $slot }}
+
+        <footer class="font-pri flex fill-width">
+            <div>
+                COPYRIGHT © 2020-2022, MIRUI MEDIA CORPORATION. (ASIA)
+            </div>
+        </footer>
+
+        @livewireScripts
+
+        <script>
+
+            // override session timeout behaviour
+            // https://github.com/livewire/livewire/pull/1146
+            window.livewire.onError(statusCode => {
+                if(statusCode === 419){
+                    window.location.reload();
+                    return false;
+                }
+            })
+            
+        </script>
+
     </body>
+
 </html>

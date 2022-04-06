@@ -1,10 +1,18 @@
 {
     "/src/mirui/js/mirui.js": "/src/mirui/js/mirui.js",
+    "/src/mirui/css/mirui-landing.css": "/src/mirui/css/mirui-landing.css",
     "/src/mirui/css/mirui.css": "/src/mirui/css/mirui.css",
     "/src/mirui/css/font.css": "/src/mirui/css/font.css",
-    "/src/mirui/css/mirui-contactus.css": "/src/mirui/css/mirui-contactus.css",
     "/src/mirui/css/mirui-auth.css": "/src/mirui/css/mirui-auth.css",
     "/src/mirui/css/mirui-aboutus.css": "/src/mirui/css/mirui-aboutus.css",
     "/src/mirui/css/mirui-watch.css": "/src/mirui/css/mirui-watch.css",
-    "/src/mirui/css/mirui-dashboard.css": "/src/mirui/css/mirui-dashboard.css"
+    "/src/mirui/css/mirui-dashboard.css": "/src/mirui/css/mirui-dashboard.css",
+    "/src/mirui/css/mirui-contactus.css": "/src/mirui/css/mirui-contactus.css",
+    "/src/mirui/img/partners/comix-wave-films.png": "/src/mirui/img/partners/comix-wave-films.png",
+    "/src/mirui/img/partners/imax.png": "/src/mirui/img/partners/imax.png",
+    "/src/mirui/img/partners/kyoto-animation.png": "/src/mirui/img/partners/kyoto-animation.png",
+    "/src/mirui/img/partners/madhouse.png": "/src/mirui/img/partners/madhouse.png",
+    "/src/mirui/img/partners/square-enix.png": "/src/mirui/img/partners/square-enix.png",
+    "/src/mirui/img/partners/thx.png": "/src/mirui/img/partners/thx.png",
+    "/src/mirui/img/partners/white-fox.png": "/src/mirui/img/partners/white-fox.png"
 }
