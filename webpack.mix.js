@@ -18,7 +18,7 @@ const mix = require('laravel-mix');
 
 mix.options({
     fileLoaderDirs: {
-        'images': 'src/mirui/images',
+        'images': 'src/mirui/img/core',
         'fonts': 'src/mirui/css/fonts',
     }
 });
