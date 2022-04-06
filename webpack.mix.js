@@ -39,4 +39,5 @@ mix.postCss('resources/mirui/css/views/mirui-watch.css', 'src/mirui/css');
 mix.js('resources/mirui/js/mirui.js', 'src/mirui/js');
 
 // https://laravel-mix.com/docs/6.0/copying-files
+mix.copyDirectory('resources/mirui/img/core', 'public/src/mirui/img/core');
 mix.copyDirectory('resources/mirui/img/partners', 'public/src/mirui/img/partners');
