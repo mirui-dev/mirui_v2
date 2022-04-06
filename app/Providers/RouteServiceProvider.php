@@ -30,6 +30,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->routes(function () {
             
+            // please readup about this regarding usage of subdomains on localhost. 
+            // https://stackoverflow.com/questions/1134290/cookies-on-localhost-with-explicit-domain
+
             // internals: /internals.mirui.co
             Route::domain('internals.'.env('SESSION_DOMAIN'))->group(function(){
                 
