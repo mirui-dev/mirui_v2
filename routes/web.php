@@ -23,6 +23,14 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', Dashboard::class)->name('mirui.dashboard');
 
 //xml
-Route::get('/xml', [xml::class, 'index'])->name('mirui.xml');
+Route::get('/xml', [xml::class, 'showMovies'])->name('mirui.xml');
+
+//xslt
+Route::get('/xslt', [xml::class, 'showXSLTMovie'])->name('mirui.xslt');
+
+//xpath
+Route::get('/insertMovie', [xml::class, 'insertMovie'])->name('mirui.insertMovie');
+
+Route::post('/insertMovie', [xml::class, 'submitInsertMovie'])->name('mirui.submitInsertMovie');
 
 // Route::get('/dashboard', Dashboard::class)->name('mirui.dashboard');
