@@ -29,12 +29,32 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            Route::prefix('internals/api')
-                ->middleware('api')
-                ->group(base_path('routes/api.php'));
+            
+            // internals: /internals.mirui.co
+            Route::domain('internals.'.env('SESSION_DOMAIN'))->group(function(){
+                
+                // internals: /internals.mirui.co/api
+                Route::prefix('api')->middleware('api')
+                    ->group(base_path('routes/internals/api.php'));
+                
+            });
 
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+            Route::middleware('web')->group(function(){
+
+                // web: /auth.mirui.co
+                Route::domain('auth.'.env('SESSION_DOMAIN'))
+                    ->group(base_path('routes/web/auth.php'));
+
+                // web: /app.mirui.co
+                Route::domain('app.'.env('SESSION_DOMAIN'))
+                    ->group(base_path('routes/web/app.php'));
+
+                // web: /mirui.co
+                Route::domain(''.env('SESSION_DOMAIN'))
+                    ->group(base_path('routes/web/guest.php'));
+
+            });
+
         });
     }
 
