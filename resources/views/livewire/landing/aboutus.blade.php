@@ -24,15 +24,15 @@
         </p>
         <div style="padding:0; opacity: .9;">
             <!-- https://stackoverflow.com/questions/43815086/laravel-mix-generates-relative-paths -->
-            <img src="{{ asset('src/mirui/img/partners/imax.png') }}" style="filter:invert(.7)">
-            <img src="{{ asset('src/mirui/img/partners/thx.png') }}" style="filter:invert(.7)">
+            <img src="{{ mix('src/mirui/img/partners/imax.png') }}" style="filter:invert(.7)">
+            <img src="{{ mix('src/mirui/img/partners/thx.png') }}" style="filter:invert(.7)">
         </div>
         <div class="flex disabled flex-wrap">
-            <img src="{{ asset('src/mirui/img/partners/white-fox.png') }}" style="filter:invert(.7)">
-            <img src="{{ asset('src/mirui/img/partners/square-enix.png') }}" style="filter:invert(.7)">
-            <img src="{{ asset('src/mirui/img/partners/madhouse.png') }}" style="filter:invert(.7)">
-            <img src="{{ asset('src/mirui/img/partners/kyoto-animation.png') }}">
-            <img src="{{ asset('src/mirui/img/partners/comix-wave-films.png') }}" style="filter:invert(1)">
+            <img src="{{ mix('src/mirui/img/partners/white-fox.png') }}" style="filter:invert(.7)">
+            <img src="{{ mix('src/mirui/img/partners/square-enix.png') }}" style="filter:invert(.7)">
+            <img src="{{ mix('src/mirui/img/partners/madhouse.png') }}" style="filter:invert(.7)">
+            <img src="{{ mix('src/mirui/img/partners/kyoto-animation.png') }}">
+            <img src="{{ mix('src/mirui/img/partners/comix-wave-films.png') }}" style="filter:invert(1)">
         </div>
     </div>
 
