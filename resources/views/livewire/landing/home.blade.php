@@ -5,7 +5,7 @@
     @endsection
 
     <!-- <a id="global-section-nav-back" class="flex global-section-nav max-height font-nohover" wire:click="previewHandler()"><</a> -->
-    <a id="global-section-nav-next" class="flex global-section-nav max-height font-nohover" wire:click="previewHandler()" href="#">></a>
+    <a id="global-section-nav-next" class="flex global-section-nav max-height font-nohover" wire:click="previewHandler()" href="javascript:;">></a>
     <article id="global-article-parent" class="flex max-width max-height">
         <div id="global-article-container" class="flex">
             <h2 id="global-article-title" class="font-pri max-width">{{ $movie->title ?? '--' }}</h2>
