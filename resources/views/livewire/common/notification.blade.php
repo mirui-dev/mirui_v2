@@ -3,7 +3,7 @@
     <div id="global-noti-element-{{ $noti['count'] }}" class="global-noti"
         onclick="
             document.getElementById('global-noti-element-{{ $noti['count'] }}').parentNode.removeChild(document.getElementById('global-noti-element-{{ $noti['count'] }}'));
-            Livewire.emit('common.notification.dismiss', $noti['count']);
+            Livewire.emit('common.notification.dismiss', {{ $noti['count'] }} );
             if(!document.getElementsByClassName('global-noti').length){document.getElementById('global-noti-parent').style.display = 'none';}
         " 
         style="
