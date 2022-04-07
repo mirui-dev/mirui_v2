@@ -13,6 +13,15 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'coins' => 0,
+    ];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
