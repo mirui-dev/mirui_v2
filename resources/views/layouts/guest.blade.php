@@ -24,8 +24,9 @@
     </head>
 
     <body class="@yield('body-class')">
-        <div id="global-noti-parent" class="flex fill-width">
-        </div>
+
+        <!-- notification -->
+        @livewire('common.notification')
 
         <!-- yeild is for normal contents, but slot is for components.  -->
         @yield('header')

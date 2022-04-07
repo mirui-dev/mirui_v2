@@ -43,8 +43,9 @@
     </head>
 
     <body>
-        <div id="global-noti-parent" class="flex fill-width">
-        </div>
+        
+        <!-- notification -->
+        @livewire('common.notification')
         
         {{ $slot }}
 
