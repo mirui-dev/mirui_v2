@@ -46,10 +46,12 @@ class RouteServiceProvider extends ServiceProvider
 
                 // web: /auth.mirui.co
                 Route::domain('auth.'.env('SESSION_DOMAIN'))
+                    ->middleware('guest')
                     ->group(base_path('routes/web/auth.php'));
 
                 // web: /app.mirui.co
                 Route::domain('app.'.env('SESSION_DOMAIN'))
+                    ->middleware('auth')
                     ->group(base_path('routes/web/app.php'));
 
                 // web: /mirui.co

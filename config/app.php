@@ -196,6 +196,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'Cart' => App\Support\Facades\Cart::class,
+        'MiruiAuth' => App\Support\Facades\MiruiAuth::class,
+        'MiruiFile' => App\Support\Facades\MiruiFile::class,
     ])->toArray(),
 
 ];

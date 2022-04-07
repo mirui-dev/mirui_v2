@@ -9,7 +9,7 @@
             <li id="dashboard-nav-menu-browse" wire:click="handler('browse')" class=" {{$browseClass}} ">BROWSE MOVIES</li>
             <li id="dashboard-nav-menu-cart" wire:click="handler('cart')" class="flex  {{$cartClass}} ">MY CART<span id="dashboard-nav-menu-cart-number" class="dashboard--cart-number {{ count(auth()->user()->cart) ? ' active ' : '' }}">{{ count(auth()->user()->cart) }}</span></li>
             <li id="dashboard-nav-menu-profile" wire:click="handler('profile')" class=" {{$profileClass}} ">MY PROFILE</li>
-            <li onclick="window.location = root + 'auth/logout/'">SIGN OUT</li>
+            <li onclick="window.location = '{{ route('mirui.auth.logout') }}'">SIGN OUT</li>
         </ul>
     </div>
 </div>

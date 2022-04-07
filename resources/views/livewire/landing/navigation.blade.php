@@ -6,21 +6,21 @@
     <nav id="global-nav" style="display:none">
         <a id="global-nav-menu-toggle" onclick="global_nav_toggleNav();" href="javascript:;">MENU [-]</a>
         <h1><a class="font-pri font-nohover" href="{{ route('mirui.landing') }}">mirui</a></h1>
-        @auth
+        @guest
             Sign in to access mirui's huge movie collection now!
-        @endauth
+        @endguest
         <ul>
             @auth('web')
             <li>
                 <a href="{{ route('mirui.dashboard') }}">DASHBOARD</a>
             </li>
             <li>
-                <a href="{{-- route('mirui.auth.logout') --}}">SIGN OUT</a>
+                <a href="{{ route('mirui.auth.logout') }}">SIGN OUT</a>
             </li>
             @endauth
             @guest
             <li>
-                <a href="{{-- route('mirui.auth.login') --}}">SIGN IN</a>
+                <a href="{{ route('mirui.auth') }}">SIGN IN</a>
             </li>
             @endguest
             <br>
@@ -56,12 +56,12 @@
                 <a href="{{ route('mirui.dashboard') }}">DASHBOARD</a>
             </li>
             <li>
-                <a href="{{-- route('mirui.auth.logout') --}}">SIGN OUT</a>
+                <a href="{{ route('mirui.auth.logout') }}">SIGN OUT</a>
             </li>
             @endauth
             @guest
             <li>
-                <a href="{{-- route('mirui.auth.login') --}}">SIGN IN</a>
+                <a href="{{ route('mirui.auth') }}">SIGN IN</a>
             </li>
             @endguest
             <br>
