@@ -4,7 +4,7 @@
         <div id="browse-search" class="flex fill-width">
             <input id="browse-search-input" class="fill-width" type="text" placeholder="search me uwu" oninput="articleSearch();">
         </div>
-        @if($isAdmin)
+        @if(auth()->user()->is_admin)
             <div id="browse-action" class="flex content-width">
                 <div id="browse-action-insert" class="flex" wire:click="createHandler()">
                     <span class="lnr lnr-file-add"></span>

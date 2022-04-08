@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $attributes = [
+        'is_admin' => false,
         'coins' => 0,
     ];
 
