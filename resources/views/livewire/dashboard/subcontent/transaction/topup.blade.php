@@ -2,17 +2,17 @@
 
     {{-- $errors --}}
 
-    <div id="transaction-content-payment-prompt" class="flex">
-        <div id="transaction-content-payment-prompt-card" class="flex">
+    <div id="transaction-content-payment-prompt" class="flex" wire:loading.class="disabled" wire:target="fuiyohhh">
+        <div id="transaction-content-payment-prompt-card" class="flex" wire:keydown.enter="fuiyohhh()">
             <div id="transaction-content-payment-prompt-card-amount" class="flex fill-width">
-                <input id="transaction-content-payment-coin" class="max-width" type="tel" wire:model.debounce.1000ms="transaction.coins" placeholder="coins amount" maxlength="4">
+                <input id="transaction-content-payment-coin" class="max-width" type="tel" wire:model="coins" placeholder="coins amount" maxlength="4">
             </div>
             <div id="transaction-content-payment-prompt-card-details" class="fill-width">
-                <input id="transaction-content-payment-cnumber" class="fill-width" type="tel" wire:model.debounce.1000ms="transaction.cardNumber" placeholder="card number" maxlength="19">
+                <input id="transaction-content-payment-cnumber" class="fill-width" type="tel" wire:model.debounce.700ms="transaction.cardNumber" placeholder="card number" maxlength="19">
             </div>
             <div id="transaction-content-payment-prompt-card-details2" class="flex fill-width">
-                <input id="transaction-content-payment-cdate" class="fill-width" type="tel" wire:model.debounce.1000ms="transaction.expiration" placeholder="mm/yy" maxlength="5">
-                <input id="transaction-content-payment-ccvv" class="fill-width" type="tel" wire:model.debounce.1000ms="transaction.cvv" placeholder="cvv" maxlength="3">
+                <input id="transaction-content-payment-cdate" class="fill-width" type="tel" wire:model.debounce.700ms="cardExpiry" placeholder="mm/yy" maxlength="5">
+                <input id="transaction-content-payment-ccvv" class="fill-width" type="tel" wire:model="cardCVV" placeholder="cvv" maxlength="3">
                 <span id="transaction-content-payment-prompt-card-details2-emblem" class="font-pri">mirui</span>
             </div>
             <span>{{ 5 }} coins is equivalent to {{ 5 * $config_conversion }}MYR</span>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger("user_id");
             $table->string("cardNumber");
             // https://stackoverflow.com/questions/3730019/why-not-use-double-or-float-to-represent-currency
+            $table->unsignedSmallInteger('coins')->nullable();
             $table->unsignedMediumInteger("amount");
             $table->boolean("is_paid");
             $table->timestamps();

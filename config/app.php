@@ -198,6 +198,7 @@ return [
         'Cart' => App\Support\Facades\Cart::class,
         'MiruiAuth' => App\Support\Facades\MiruiAuth::class,
         'MiruiFile' => App\Support\Facades\MiruiFile::class,
+        'MiruiValidator' => App\Support\Facades\MiruiValidator::class,
     ])->toArray(),
 
 ];

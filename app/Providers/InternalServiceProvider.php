@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\App;
 use App\Http\Internals\Cart;
 use App\Http\Internals\MiruiAuth;
 use App\Http\Internals\MiruiFile;
+use App\Http\Internals\MiruiValidator;
 
 class InternalServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,12 @@ class InternalServiceProvider extends ServiceProvider
         });
         App::singleton('mirui_auth', function(){
             return new MiruiAuth;
+        });
+        App::singleton('mirui_file', function(){
+            return new MiruiFile;
+        });
+        App::singleton('mirui_validator', function(){
+            return new MiruiValidator;
         });
     }
 
