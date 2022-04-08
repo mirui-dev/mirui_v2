@@ -3,11 +3,12 @@
     @php
         // https://stackoverflow.com/questions/28105113/laravel-urlto-port-number-for-localhost-not-included-in-db-seed-files
         $db_profile_picture = auth()->user()->profile_picture_id ?? false;
-        $db_profile_picture_path = $db_profile_picture ? 'url('.Storage::disk(\App\Models\InternalStatic::find($db_profile_picture)->disk)->url(\App\Models\InternalStatic::find($db_profile_picture)->path).')' : '';
+        // $db_profile_picture_path = $db_profile_picture ? 'url('.Storage::disk(\App\Models\InternalStatic::find($db_profile_picture)->disk)->url(\App\Models\InternalStatic::find($db_profile_picture)->path).')' : '';
+        $db_profile_picture_path = $db_profile_picture ? 'url('.MiruiFile::getURL($db_profile_picture).')' : '';
     @endphp
 
     <div id="profile-overview" class="flex max-width max-height">
-        <div id="profile-overview-usercard" class="flex content-height content-width" wire:loading.class="disabled" wire:target="profile_picture, topupHandler">
+        <div id="profile-overview-usercard" class="flex content-height content-width" wire:loading.class="disabled" wire:target="profile_picture, topupHandler, profilePictureHandler">
             <div id="profile-overview-usercard-details" class="flex fill-width">
                 <label for="profile-overview-usercard-details-avatar-core">
                     <div id="profile-overview-usercard-details-avatar" style="background-image: {{ $profile_picture ? 'url('.$profile_picture->temporaryUrl().')' : $db_profile_picture_path }} ">

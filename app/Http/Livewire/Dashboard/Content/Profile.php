@@ -5,10 +5,12 @@ namespace App\Http\Livewire\Dashboard\Content;
 use Livewire\Component;
 
 use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\Storage;
+// use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Validator;
 
 use App\Models\User;
 use App\Models\InternalStatic;
+use App\Support\Facades\MiruiFile;
 
 class Profile extends Component
 {
@@ -39,33 +41,57 @@ class Profile extends Component
         // $this->user_coins = auth()->user()->coins;
     }
 
+    // it triggers after file being uploaded. no use. 
+    // public function updatingProfilePicture(){
+    //     // injectNoti('<p>Uploading profile picture... ヾ( `ー´)シφ__', null, 6000);
+    //     $this->emit('common.notification.new', '<p>Uploading profile picture... ヾ( `ー´)シφ__</p>', null, 6000);
+    // }
+
     public function topupHandler(){
         $this->emit('dashboard.subcontent.viewHandler', 'transaction', ['view' => 'topup']);
         $this->emit('dashboard.subcontentnav.navStateHandler', $this->subcontentnav_topup);
     }
 
     public function profilePictureHandler(){
-        // dump($this->profile_picture);
-        $saveLengzaiLenglui = Storage::disk($this->profile_picture_disk)->putFile($this->profile_picture_disk_dir, $this->profile_picture);
-        if(!$saveLengzaiLenglui){
-            // oh no, gigi! 
-        }else{
-            // save image to resource
-            $saveDashen = new InternalStatic();
-            $saveDashen->disk = $this->profile_picture_disk;
-            $saveDashen->path = $saveLengzaiLenglui;
-            $saveDashen->save();
-            // dump($saveDashen->save());
-            // dump(Storage::url($saveDashen->path));
 
-            // save resource id into user
-            auth()->user()->profile_picture_id = $saveDashen->id;
-            if(!auth()->user()->save()){
-                // ah, gigi again....
+        $upload = MiruiFile::saveImage($this->profile_picture, $this->profile_picture_disk_dir, $this->profile_picture_disk);
+
+        if($upload instanceof InternalStatic){
+            auth()->user()->profile_picture_id = $upload->id;
+            $setProfilePicture = auth()->user()->save();
+            if(!$setProfilePicture){
+                $this->emit('common.notification.new', '<p>An error occured while saving picture. <br>Changes discarded. </p>', null, 8000);
             }else{
+                $this->emit('common.notification.new', '<p>Upload successss!!! („• ֊ •„)</p>', null, 6000);
                 $this->profile_picture = null;
             }
+        }else if($upload instanceof Validator){
+            foreach($upload->errors()->all() as $errors){
+                $this->emit('common.notification.new', '<p>'.$errors.'</p>', null, 8000);
+            }
+        }else{
+            $this->emit('common.notification.new', '<p>An error occured while saving picture. <br>Changes discarded. </p>', null, 8000);
         }
+
+        // if(!$saveLengzaiLenglui){
+        //     // oh no, gigi! 
+        // }else{
+        //     // save image to resource
+        //     $saveDashen = new InternalStatic();
+        //     $saveDashen->disk = $this->profile_picture_disk;
+        //     $saveDashen->path = $saveLengzaiLenglui;
+        //     $saveDashen->save();
+        //     // dump($saveDashen->save());
+        //     // dump(Storage::url($saveDashen->path));
+
+        //     // save resource id into user
+        //     auth()->user()->profile_picture_id = $saveDashen->id;
+        //     if(!auth()->user()->save()){
+        //         // ah, gigi again....
+        //     }else{
+        //         $this->profile_picture = null;
+        //     }
+        // }
     }
     
 }
