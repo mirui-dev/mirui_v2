@@ -10,6 +10,7 @@ use App\Http\Internals\Cart;
 use App\Http\Internals\MiruiAuth;
 use App\Http\Internals\MiruiFile;
 use App\Http\Internals\MiruiValidator;
+use App\Http\Internals\MiruiXML;
 
 class InternalServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,9 @@ class InternalServiceProvider extends ServiceProvider
         });
         App::singleton('mirui_validator', function(){
             return new MiruiValidator;
+        });
+        App::singleton('mirui_xml', function(){
+            return new MiruiXML;
         });
     }
 

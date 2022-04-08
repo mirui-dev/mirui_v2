@@ -39,6 +39,10 @@ class RouteServiceProvider extends ServiceProvider
                 // internals: /internals.mirui.co/api
                 Route::prefix('api')->middleware('api')
                     ->group(base_path('routes/internals/api.php'));
+
+                // internals: /internals.mirui.co/xml
+                Route::prefix('xml')->middleware(['web', 'auth'])
+                    ->group(base_path('routes/internals/xml.php'));
                 
             });
 

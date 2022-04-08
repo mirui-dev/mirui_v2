@@ -11,6 +11,7 @@
                     <span>CREATE</span>
                 </div>
             </div>
+            @livewire('dashboard.content.browse.xml-create')
         @endif
     </div>
     <!-- <div id="browse-gallery" class="flex content-height"> -->
