@@ -1,6 +1,15 @@
 <div class="max-width max-height"> <!-- livewire requirement -->
 
+    @php
+        $db_movie_visual_cover = $movie->visual->cover;
+        $db_movie_visual_cover_path = $db_movie_visual_cover ? 'var(--browse-gallery-node-shade), url('.MiruiFile::getURL($db_movie_visual_cover).')' : null;
+    @endphp
+
+    @if(!is_null($db_movie_visual_cover_path))
+    <div id="browse-sub-cover" class="flex" style="background-image: {{ $db_movie_visual_cover_path }}">
+    @else
     <div id="browse-sub-cover" class="flex">
+    @endif
         <div id="browse-sub-cover-imagePrompt" class="hidden">
             <div id="browse-sub-cover-imagePrompt-main">
                 <input id="browse-sub-cover-imagePrompt-poster" type="file" accept="image/*" onchange="articleImageControl('poster')">

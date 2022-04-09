@@ -169,5 +169,20 @@ class Movie extends Model
             }
         );
     }
-    
+
+    protected function visual(): Attribute
+    {
+        return Attribute::make(
+            get: function($value){
+                $return = json_decode($value);
+                return $return;
+            },
+            set: function($value){
+                $return = json_encode($value ?? []);
+                // dump($return);
+                return $return;
+            }
+        );
+    }
+
 }

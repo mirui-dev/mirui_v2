@@ -4,15 +4,25 @@ namespace App\Http\Livewire\Dashboard\Subcontent;
 
 use Livewire\Component;
 
+use Livewire\WithFileUploads;
+
 use App\Support\Facades\Cart;
+use App\Support\Facades\MiruiFile;
 use App\Models\Movie;
 
 class BrowseManage extends Component
 {
 
+    use WithFileUploads;
+
     public Movie $movie;
     public $movie_id = null;
+    public $movie_visual_cover = null;
+    public $movie_visual_poster = null;
     public $manageMode = 'create';
+
+    protected $movie_visual_disk = 'mirui-static';
+    protected $movie_visual_disk_dir = 'movie';
 
     // protected $subcontentnav = ['back', 'add'];
 
@@ -60,6 +70,8 @@ class BrowseManage extends Component
         }else{
             $this->movie = Movie::find($this->movie_id);
             $this->manageMode = 'edit';
+            // $this->movie_visual_cover = $this->movie->visual->cover ?? null;
+            // $this->movie_visual_poster = $this->movie->visual->poster ?? null;
         }
     }
 
@@ -67,6 +79,25 @@ class BrowseManage extends Component
         // show saving state
         // session()->flash('state.saving');
         // $this->movie->validate();
+
+        try{
+            if(!is_null($this->movie_visual_cover)){
+                $uploadCover = MiruiFile::saveImage($this->movie_visual_cover, $this->movie_visual_disk_dir, $this->movie_visual_disk);
+            }
+            if(!is_null($this->movie_visual_poster)){
+                $uploadPoster = MiruiFile::saveImage($this->movie_visual_poster, $this->movie_visual_disk_dir, $this->movie_visual_disk);
+            }
+        }catch(Exception $e){
+            $this->emit('common.notification.new', '<p>An error occured while saving picture. <br>Image won\'t be saved. </p>', null, 8000);
+        }
+
+        if($uploadCover ?? null){
+            $this->movie->visual->cover = $uploadCover->id;
+        }
+
+        if($uploadPoster ?? null){
+            $this->movie->visual->poster = $uploadPoster->id;
+        }
 
         $this->movie->save();
         $this->emit('dashboard.subcontentnav.navSubstateHandler', 'state.edit.saved');

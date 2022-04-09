@@ -2,11 +2,16 @@
    
     {{-- $manageMode ?? null --}}
 
-    <div id="browse-sub-cover" class="flex">
+    @php
+        $db_movie_visual_cover = $movie->visual->cover;
+        $db_movie_visual_cover_path = $db_movie_visual_cover ? 'var(--browse-gallery-node-shade), url('.MiruiFile::getURL($db_movie_visual_cover).')' : '';
+    @endphp
+
+    <div id="browse-sub-cover" class="flex" wire:loading.class="disabled" wire:target="movie_visual_poster, movie_visual_cover" style="background-image: {{ $movie_visual_cover ? 'var(--browse-gallery-node-shade), url('.$movie_visual_cover->temporaryUrl().')' : $db_movie_visual_cover_path }}" >
         <div id="browse-sub-cover-imagePrompt">
             <div id="browse-sub-cover-imagePrompt-main">
-                <input id="browse-sub-cover-imagePrompt-poster" type="file" accept="image/*" onchange="articleImageControl('poster')">
-                <input id="browse-sub-cover-imagePrompt-cover" type="file" accept="image/*" onchange="articleImageControl('cover')">
+                <input id="browse-sub-cover-imagePrompt-poster" wire:model="movie_visual_poster" type="file" accept="image/*">
+                <input id="browse-sub-cover-imagePrompt-cover" wire:model="movie_visual_cover" type="file" accept="image/*">
                 <button>
                     <label for="browse-sub-cover-imagePrompt-poster">SELECT POSTER IMAGE</label>
                 </button>
