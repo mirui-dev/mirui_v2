@@ -18,8 +18,8 @@ return new class extends Migration
             $table->boolean('is_visible');
             $table->string('title');
             $table->string('title2')->nullable();
-            $table->string('description')->nullable();
-            $table->string('description2')->nullable();
+            $table->longtext('description')->nullable();
+            $table->longtext('description2')->nullable();
             $table->json('genre');
             $table->json('language');
             $table->json('subtitle');

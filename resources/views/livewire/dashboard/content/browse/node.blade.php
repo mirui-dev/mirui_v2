@@ -2,7 +2,7 @@
     @foreach($movies as $movie)
 
     @php
-        $db_movie_visual_poster = $movie->visual->poster;
+        $db_movie_visual_poster = $movie->visual->poster ?? null;
         $db_movie_visual_poster_path = $db_movie_visual_poster ? 'var(--browse-gallery-node-shade), url('.MiruiFile::getURL($db_movie_visual_poster).')' : null;
     @endphp
 

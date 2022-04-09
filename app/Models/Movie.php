@@ -19,7 +19,7 @@ class Movie extends Model
      * @var array
      */
     protected $attributes = [
-        'is_visible' => false,
+        'is_visible' => true,
         'genre' => '{"tags":[]}',
         'language' => '{"language":[]}',
         'subtitle' => '{"language":[]}',

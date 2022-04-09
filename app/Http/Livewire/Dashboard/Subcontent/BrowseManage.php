@@ -105,8 +105,10 @@ class BrowseManage extends Component
         
         if($this->manageMode == 'edit'){
             $this->emit('dashboard.subcontent.viewHandler', 'browse', ['movie_id' => $this->movie->id]);
+            $this->emit('common.notification.new', '<p>Changes saved successfully. </p>', null, 6000);
         }else{
             $this->emit('dashboard.subcontent.viewHandler');
+            $this->emit('common.notification.new', '<p>Movie created successfully. </p>', null, 6000);
         }
     }
 
@@ -115,6 +117,7 @@ class BrowseManage extends Component
         $this->emit('dashboard.subcontentnav.navSubstateHandler', 'state.delete.deleted');
         $this->emit('dashboard.content.browse.node.refresh');
         $this->emit('dashboard.subcontent.viewHandler');
+        $this->emit('common.notification.new', '<p>Movie deleted successfully. </p>', null, 6000);
     }
 
     public function addToCart(){

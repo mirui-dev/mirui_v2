@@ -1,9 +1,9 @@
 <div class="max-width max-height"> <!-- livewire requirement -->
 
-    <div class="flex fill-width browse-float">
-        <div id="browse-search" class="flex fill-width">
+    <div class="flex fill-width browse-float" style="justify-content: flex-end;">
+        <!-- <div id="browse-search" class="flex fill-width">
             <input id="browse-search-input" class="fill-width" type="text" placeholder="search me uwu" oninput="articleSearch();">
-        </div>
+        </div> -->
     </div>
     <!-- <div id="browse-gallery" class="flex content-height"> -->
         @livewire('dashboard.content.browse.node', ['nodeMode' => 'library'])

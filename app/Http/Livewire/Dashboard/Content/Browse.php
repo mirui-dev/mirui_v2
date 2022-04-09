@@ -27,6 +27,7 @@ class Browse extends Component
         // ref: https://github.com/livewire/livewire/issues/598#issuecomment-764947653
         $this->emit('dashboard.subcontentnav.navStateHandler', $this->subcontentnav_browseManage_SU);
         $this->emit('dashboard.subcontentnav.navSubstateHandler', 'state.edit.editing');
+        $this->emit('common.notification.new', '<p>You are now in create mode. Click on elements to edit their details. </p>', null, 6000);
     }
 
 }

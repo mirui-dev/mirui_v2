@@ -1,7 +1,7 @@
 <div class="max-width max-height"> <!-- livewire requirement -->
 
     @php
-        $db_movie_visual_cover = $movie->visual->cover;
+        $db_movie_visual_cover = $movie->visual->cover ?? null;
         $db_movie_visual_cover_path = $db_movie_visual_cover ? 'var(--browse-gallery-node-shade), url('.MiruiFile::getURL($db_movie_visual_cover).')' : null;
     @endphp
 
@@ -90,7 +90,7 @@
         <div id="browse-sub-section-main">
             <div id="browse-sub-section-main-details" class="browse-sub-section-box">
                 <div>STORYLINE</div>
-                <p id="browse-sub-section-main-details-desc2">{{ $movie->description2 ?? '--' }}</p>
+                <p id="browse-sub-section-main-details-desc2">{!! $movie->description2 ?? '--' !!}</p>
             </div>
         </div>
     </div>

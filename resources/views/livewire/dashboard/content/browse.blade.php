@@ -1,9 +1,9 @@
 <div class="max-width max-height" wire:loading.class="disabled" wire:target="createHandler"> <!-- livewire requirement -->
 
-    <div class="flex fill-width browse-float">
-        <div id="browse-search" class="flex fill-width">
+    <div class="flex fill-width browse-float" style="justify-content: flex-end;">
+        <!-- <div id="browse-search" class="flex fill-width">
             <input id="browse-search-input" class="fill-width" type="text" placeholder="search me uwu" oninput="articleSearch();">
-        </div>
+        </div> -->
         @if(auth()->user()->is_admin)
             <div id="browse-action" class="flex content-width">
                 <div id="browse-action-insert" class="flex" wire:click="createHandler()">

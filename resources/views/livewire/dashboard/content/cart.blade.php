@@ -1,10 +1,10 @@
 <div class="max-width max-height" wire:loading.delay.class="disabled" wire:target="checkoutHandler"> <!-- livewire requirement -->
     
     <!-- inherited from browse.php -->
-    <div class="flex fill-width browse-float">
-        <div id="browse-search" class="flex fill-width">
+    <div class="flex fill-width browse-float" style="justify-content: flex-end;">
+        <!-- <div id="browse-search" class="flex fill-width">
             <input id="browse-search-input" class="fill-width" type="text" placeholder="search me uwu" oninput="articleSearch();">
-        </div>
+        </div> -->
         <div id="browse-action" class="flex content-width">
             @if($isCheckoutApplicable)
             <div id="browse-action-checkout" class="flex" wire:click="checkoutHandler()">

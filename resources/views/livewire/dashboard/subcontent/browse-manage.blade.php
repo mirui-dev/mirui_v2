@@ -3,7 +3,7 @@
     {{-- $manageMode ?? null --}}
 
     @php
-        $db_movie_visual_cover = $movie->visual->cover;
+        $db_movie_visual_cover = $movie->visual->cover ?? null;
         $db_movie_visual_cover_path = $db_movie_visual_cover ? 'var(--browse-gallery-node-shade), url('.MiruiFile::getURL($db_movie_visual_cover).')' : '';
     @endphp
 
@@ -89,7 +89,7 @@
         <div id="browse-sub-section-main" class="fill-width">
             <div id="browse-sub-section-main-details" class="browse-sub-section-box">
                 <div>STORYLINE</div>
-                <textarea id="browse-sub-section-main-details-desc2" class="fill-width" wire:model.debounce.700ms="movie.description2" rows="5" placeholder="This is a case-sensitive movie description area. &#13;&#10;Some input fields will be auto-formatted upon input completion. "></textarea>
+                <textarea id="browse-sub-section-main-details-desc2" class="fill-width" wire:model.debounce.700ms="movie.description2" rows="5" placeholder="This is a case-sensitive movie description area. &#13;&#10;HTML tags are accepted and will be displayed accordingly.  "></textarea>
             </div>
         </div>
     </div>

@@ -39,9 +39,15 @@ class XmlCreate extends Component
             $this->emit('common.notification.new', '<p>An error occured while parsing the XML file. Please check your XML file and try again. </p>', null, 8000);
         }else{
             $this->emit('common.notification.new', '<p>Parse successful. '.$insert.' movie record(s) inserted. </p>', null, 6000);
+            $this->emit('dashboard.subcontentnav.navSubstateHandler', 'state.edit.saved');
+            $this->emit('dashboard.content.browse.node.refresh');
         }
 
         $this->xml_file = null;
+    }
+
+    public function sampleHandler(){
+        return response()->download(resource_path('mirui/xml/mirui_movie-sample.xml'), 'mirui_movie-sample.xml');
     }
 
 }

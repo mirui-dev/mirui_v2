@@ -32,6 +32,7 @@ class Browse extends Component
 
     public function handler(){
         $this->emit('dashboard.subcontent.viewHandler', 'browse-manage', ['movie_id' => $this->movie->id]);
+        $this->emit('common.notification.new', '<p>You are now in edit mode. Click on elements to edit their details. </p>', null, 6000);
     }
 
     public function delete(){
@@ -39,6 +40,7 @@ class Browse extends Component
         $this->emit('dashboard.subcontentnav.navSubstateHandler', 'state.delete.deleted');
         $this->emit('dashboard.content.browse.node.refresh');
         $this->emit('dashboard.subcontent.viewHandler');
+        $this->emit('common.notification.new', '<p>Movie deleted successfully. </p>', null, 6000);
     }
 
     public function addToCart(){
