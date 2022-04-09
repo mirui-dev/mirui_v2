@@ -200,6 +200,7 @@ return [
         'MiruiFile' => App\Support\Facades\MiruiFile::class,
         'MiruiValidator' => App\Support\Facades\MiruiValidator::class,
         'MiruiXML' => App\Support\Facades\MiruiXML::class,
+        'MiruiAPI' => App\Support\Facades\MiruiAPI::class,
     ])->toArray(),
 
 ];

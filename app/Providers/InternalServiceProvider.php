@@ -11,6 +11,7 @@ use App\Http\Internals\MiruiAuth;
 use App\Http\Internals\MiruiFile;
 use App\Http\Internals\MiruiValidator;
 use App\Http\Internals\MiruiXML;
+use App\Http\Internals\MiruiAPI;
 
 class InternalServiceProvider extends ServiceProvider
 {
@@ -36,6 +37,9 @@ class InternalServiceProvider extends ServiceProvider
         });
         App::singleton('mirui_xml', function(){
             return new MiruiXML;
+        });
+        App::singleton('mirui_api', function(){
+            return new MiruiAPI;
         });
     }
 

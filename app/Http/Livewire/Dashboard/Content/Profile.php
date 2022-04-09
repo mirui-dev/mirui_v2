@@ -11,7 +11,7 @@ use Illuminate\Validation\Validator;
 use App\Models\User;
 use App\Models\InternalStatic;
 use App\Support\Facades\MiruiFile;
-use App\Support\Facades\MiruiAuth;
+use App\Support\Facades\MiruiAPI;
 
 class Profile extends Component
 {
@@ -101,10 +101,10 @@ class Profile extends Component
 
         // if(count(auth()->user()->tokens)){
         if(!is_null(auth()->user()->tokens()->latest()->first())){
-            MiruiAuth::revokeToken();
+            MiruiAPI::revokeToken();
             $this->apiKey = null; 
         }else{
-            $this->apiKey = "Bearer ".MiruiAuth::generateToken();
+            $this->apiKey = "Bearer ".MiruiAPI::generateToken();
             $this->emit('common.notification.new', '<p>API key generated. Please copy and save at a dry, safe place. </p>', null, 6000);
         }
     }
