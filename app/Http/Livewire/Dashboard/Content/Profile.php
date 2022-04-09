@@ -11,6 +11,7 @@ use Illuminate\Validation\Validator;
 use App\Models\User;
 use App\Models\InternalStatic;
 use App\Support\Facades\MiruiFile;
+use App\Support\Facades\MiruiAuth;
 
 class Profile extends Component
 {
@@ -18,6 +19,7 @@ class Profile extends Component
 
     // public $user_coins = null;
     public $profile_picture = null;
+    public $apiKey = null;
 
     private $subcontentnav_topup = ['back'];
     protected $profile_picture_disk = 'mirui-static-priv';
@@ -94,4 +96,17 @@ class Profile extends Component
         // }
     }
     
+    public function sanctumHandler(){
+        // !is_null(auth()->user()->tokens()->latest()->first())
+
+        // if(count(auth()->user()->tokens)){
+        if(!is_null(auth()->user()->tokens()->latest()->first())){
+            MiruiAuth::revokeToken();
+            $this->apiKey = null; 
+        }else{
+            $this->apiKey = "Bearer ".MiruiAuth::generateToken();
+            $this->emit('common.notification.new', '<p>API key generated. Please copy and save at a dry, safe place. </p>', null, 6000);
+        }
+    }
+
 }

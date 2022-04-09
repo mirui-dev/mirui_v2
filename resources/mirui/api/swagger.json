@@ -1,0 +1,177 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "Welcome to Mirui API. This api endpoint contains various sub-endpoints that allows you to retrieve movie metadata from mirui database. For further enquiries, kindly contact us at api_support@mirui.io. ",
+      "version": "v2.1",
+      "title": "MIRUI API",
+      "contact": {
+        "email": "api_support@mirui.io"
+      }
+    },
+    "host": "internals.mirui.localhost:5593",
+    "basePath": "/api",
+    "tags": [
+      {
+        "name": "movies",
+        "description": "Access to all available movies"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/movies": {
+        "get": {
+          "tags": [
+            "movies"
+          ],
+          "summary": "List all movies",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/DefaultResponse"
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/movies/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "Movie ID",
+              "type": "integer",
+              "format": "int64",
+              "minimum": 1
+            }
+          ],
+          "tags": [
+            "movies"
+          ],
+          "summary": "Get specific movie",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/DefaultResponse"
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/users": {
+        "get": {
+          "tags": [
+            "users"
+          ],
+          "summary": "List all user",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/DefaultResponse"
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      },
+      "/users/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "User ID",
+              "type": "integer",
+              "format": "int64",
+              "minimum": 1
+            }
+          ],
+          "tags": [
+            "users"
+          ],
+          "summary": "Get specific user",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/DefaultResponse"
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "api_key": []
+            }
+          ]
+        }
+      }
+    },
+    "securityDefinitions": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "definitions": {
+      "DefaultResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }

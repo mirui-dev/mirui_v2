@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\API\Movie;
+use App\Http\Controllers\API\User;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/swagger.json', function(){
+    return response()->file(resource_path('mirui/api/swagger.json'));
 });
+
+Route::middleware('auth:sanctum')->group(function(){
+
+    Route::apiResources([
+        'movies' => Movie::class,
+        'users' => User::class,
+    ]);
+
+});
+
