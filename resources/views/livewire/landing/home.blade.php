@@ -5,7 +5,7 @@
     @endsection
 
     @php
-        $db_movie_visual_cover = $movie->visual->cover;
+        $db_movie_visual_cover = $movie->visual->cover ?? null;
         $db_movie_visual_cover_path = $db_movie_visual_cover ? 'url('.MiruiFile::getURL($db_movie_visual_cover).')' : null;
     @endphp
 
