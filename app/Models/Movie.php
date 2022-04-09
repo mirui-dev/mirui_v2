@@ -21,8 +21,8 @@ class Movie extends Model
     protected $attributes = [
         'is_visible' => false,
         'genre' => '{"tags":[]}',
-        'language' => '{"lang":[]}',
-        'subtitle' => '{"lang":[]}',
+        'language' => '{"language":[]}',
+        'subtitle' => '{"language":[]}',
         // 'rating' => 'P13',  // prevent set default because will be set automatically as value in model binding on livewire component
         // 'score' => 6.2, 
         'cast' => '{"cast":[]}', 
